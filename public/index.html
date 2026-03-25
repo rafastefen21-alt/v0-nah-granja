@@ -29,15 +29,33 @@
   .hero{height:100vh;min-height:680px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
   .hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;animation:slowzoom 18s ease-in-out infinite alternate}
   @keyframes slowzoom{from{transform:scale(1)}to{transform:scale(1.06)}}
-  .hero-content{position:relative;text-align:center;color:#fff;padding:0 24px;animation:fadeUp 1.1s ease both}
+  .hero-content{position:relative;text-align:center;color:#fff;padding:0 24px;animation:fadeUp 1.1s ease both;z-index:2}
   .hero-eyebrow{display:inline-block;font-size:10.5px;letter-spacing:5px;text-transform:uppercase;color:var(--sand);font-weight:600;margin-bottom:22px;border:1px solid rgba(196,164,104,.4);padding:6px 18px}
   .hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(70px,11vw,136px);font-weight:300;font-style:italic;line-height:.9;letter-spacing:-2px;margin-bottom:28px;text-shadow:0 4px 32px rgba(0,0,0,.25)}
   .hero-tagline{font-size:13px;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.75);font-weight:300;margin-bottom:52px}
   .hero-btn{display:inline-flex;align-items:center;gap:10px;background:var(--sand);color:var(--forest);text-decoration:none;padding:16px 42px;font-size:10.5px;letter-spacing:3px;text-transform:uppercase;font-weight:700;transition:all .3s}
   .hero-btn:hover{background:#fff;transform:translateY(-3px);box-shadow:0 14px 40px rgba(0,0,0,.35)}
-  .hero-scroll{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,.5);font-size:9px;letter-spacing:3px;text-transform:uppercase;animation:scrollpulse 2.5s ease-in-out infinite}
+  .hero-scroll{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,.5);font-size:9px;letter-spacing:3px;text-transform:uppercase;animation:scrollpulse 2.5s ease-in-out infinite;z-index:2}
   .hero-scroll::after{content:'';width:1px;height:44px;background:linear-gradient(to bottom,rgba(255,255,255,.5),transparent)}
   @keyframes scrollpulse{0%,100%{opacity:.5;transform:translateX(-50%) translateY(0)}50%{opacity:1;transform:translateX(-50%) translateY(6px)}}
+
+  /* PARTICLES ENCANTADAS */
+  .hero-particles{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+  .particle{position:absolute;width:4px;height:4px;border-radius:50%;background:rgba(122,158,125,.65);box-shadow:0 0 8px 2px rgba(122,158,125,.4);animation:floatIn 12s ease-in-out infinite}
+  .particle:nth-child(1){left:-10px;top:15%;animation-delay:0s;animation-duration:14s}
+  .particle:nth-child(2){left:-10px;top:35%;animation-delay:2s;animation-duration:11s}
+  .particle:nth-child(3){left:-10px;top:55%;animation-delay:4s;animation-duration:13s}
+  .particle:nth-child(4){left:-10px;top:75%;animation-delay:1s;animation-duration:12s}
+  .particle:nth-child(5){left:-10px;top:25%;animation-delay:6s;animation-duration:15s}
+  .particle:nth-child(6){right:-10px;left:auto;top:20%;animation-delay:3s;animation-duration:13s;animation-name:floatInRight}
+  .particle:nth-child(7){right:-10px;left:auto;top:45%;animation-delay:5s;animation-duration:11s;animation-name:floatInRight}
+  .particle:nth-child(8){right:-10px;left:auto;top:65%;animation-delay:1.5s;animation-duration:14s;animation-name:floatInRight}
+  .particle:nth-child(9){right:-10px;left:auto;top:85%;animation-delay:7s;animation-duration:12s;animation-name:floatInRight}
+  .particle:nth-child(10){right:-10px;left:auto;top:30%;animation-delay:4.5s;animation-duration:10s;animation-name:floatInRight}
+  .particle:nth-child(11){left:-10px;top:90%;animation-delay:8s;animation-duration:16s}
+  .particle:nth-child(12){right:-10px;left:auto;top:10%;animation-delay:9s;animation-duration:11s;animation-name:floatInRight}
+  @keyframes floatIn{0%{transform:translateX(0) translateY(0);opacity:0}10%{opacity:.7}50%{transform:translateX(45vw) translateY(-30px);opacity:.5}90%{opacity:.3}100%{transform:translateX(55vw) translateY(-50px);opacity:0}}
+  @keyframes floatInRight{0%{transform:translateX(0) translateY(0);opacity:0}10%{opacity:.7}50%{transform:translateX(-45vw) translateY(-30px);opacity:.5}90%{opacity:.3}100%{transform:translateX(-55vw) translateY(-50px);opacity:0}}
 
   /* UTILS */
   .eyebrow{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--sage);font-weight:700;margin-bottom:14px}
@@ -187,21 +205,32 @@
 
 <!-- ══ HERO ══ -->
 <section class="hero">
-  <!--
-    ★ TROQUE a URL abaixo pela foto da fachada com as árvores (foto 6 ou 12 das que você enviou)
-    Suba a foto no mesmo servidor e aponte o caminho aqui.
-  --> 
   <div class="hero-bg" style="
     background-image:
-      linear-gradient(to bottom,rgba(10,18,12,.48)0%,rgba(10,18,12,.08)45%,rgba(10,18,12,.62)100%),
-      url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/fachada-arvores-TJebhfD1Vi9Gswwdlly2JzIjJtwQtt.png');
+      linear-gradient(to bottom,rgba(10,18,12,.42)0%,rgba(10,18,12,.05)40%,rgba(10,18,12,.55)100%),
+      url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/20190919_151600-E5qVwxMHsui2AtTikEiImWZ1UpadsU.jpg');
     background-size:cover;background-position:center;">
   </div>
+  <!-- Particulas encantadas -->
+  <div class="hero-particles">
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+  </div>
   <div class="hero-content">
-    <p class="hero-eyebrow">Granja Julieta · São Paulo · SP</p>
+    <p class="hero-eyebrow">Granja Julieta . Sao Paulo . SP</p>
     <h1 class="hero-title">Nah Granja</h1>
-    <p class="hero-tagline">Espaço para Eventos Corporativos</p>
-    <a href="https://wa.me/5511940439119" class="hero-btn">✦&nbsp; Solicite um Orçamento</a>
+    <p class="hero-tagline">Espaco para Eventos Corporativos</p>
+    <a href="https://wa.me/5511940439119" class="hero-btn">Solicite um Orcamento</a>
   </div>
   <div class="hero-scroll">Scroll</div>
 </section>
