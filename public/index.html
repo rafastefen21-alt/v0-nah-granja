@@ -25,12 +25,24 @@
   .nav-cta{background:var(--sand)!important;color:var(--forest)!important;padding:10px 22px!important;font-weight:700!important;letter-spacing:2px!important;transition:background .2s!important}
   .nav-cta:hover{background:#d9b87a!important}
 
+  /* MOBILE MENU */
+  .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;z-index:201}
+  .nav-hamburger span{width:24px;height:2px;background:#fff;transition:all .3s ease}
+  .nav-hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+  .nav-hamburger.open span:nth-child(2){opacity:0}
+  .nav-hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+  .mobile-menu{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(26,40,29,.98);z-index:199;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:32px;opacity:0;visibility:hidden;transition:all .4s ease}
+  .mobile-menu.open{opacity:1;visibility:visible}
+  .mobile-menu a{color:#fff;text-decoration:none;font-size:14px;letter-spacing:3px;text-transform:uppercase;font-weight:500;transition:color .2s}
+  .mobile-menu a:hover{color:var(--sand)}
+  .mobile-menu .nav-cta{background:var(--sand);color:var(--forest);padding:14px 28px;margin-top:16px}
+
   /* HERO */
   .hero{height:100vh;min-height:680px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
   .hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;animation:slowzoom 18s ease-in-out infinite alternate}
   @keyframes slowzoom{from{transform:scale(1)}to{transform:scale(1.06)}}
   .hero-content{position:relative;text-align:center;color:#fff;padding:0 24px;animation:fadeUp 1.1s ease both;z-index:2}
-  .hero-eyebrow{display:inline-block;font-size:10.5px;letter-spacing:5px;text-transform:uppercase;color:var(--sand);font-weight:600;margin-bottom:22px;border:1px solid rgba(196,164,104,.4);padding:6px 18px}
+  .hero-eyebrow{display:inline-block;font-size:10.5px;letter-spacing:5px;text-transform:uppercase;color:#fff;font-weight:600;margin-bottom:22px;border:1px solid rgba(255,255,255,.5);padding:6px 18px;background:rgba(0,0,0,.25);backdrop-filter:blur(4px)}
   .hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(70px,11vw,136px);font-weight:300;font-style:italic;line-height:.9;letter-spacing:-2px;margin-bottom:28px;text-shadow:0 4px 32px rgba(0,0,0,.25)}
   .hero-tagline{font-size:13px;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.75);font-weight:300;margin-bottom:52px}
   .hero-btn{display:inline-flex;align-items:center;gap:10px;background:var(--sand);color:var(--forest);text-decoration:none;padding:16px 42px;font-size:10.5px;letter-spacing:3px;text-transform:uppercase;font-weight:700;transition:all .3s}
@@ -194,6 +206,7 @@
     nav{padding:16px 24px}
     nav.solid{padding:12px 24px}
     .nav-links{display:none}
+    .nav-hamburger{display:flex}
 
     .sobre{padding:60px 24px}
     .sobre-grid{grid-template-columns:1fr;gap:40px}
@@ -249,7 +262,20 @@
     <li><a href="#gastronomia">Gastronomia</a></li>
     <li><a href="#contato" class="nav-cta">Solicitar Orçamento</a></li>
   </ul>
+  <div class="nav-hamburger" id="hamburger" onclick="toggleMobileMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
 </nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#espacos" onclick="closeMobileMenu()">Espaços</a>
+  <a href="#jardins" onclick="closeMobileMenu()">Jardins</a>
+  <a href="#gastronomia" onclick="closeMobileMenu()">Gastronomia</a>
+  <a href="#contato" class="nav-cta" onclick="closeMobileMenu()">Solicitar Orçamento</a>
+</div>
 
 <!-- ══ HERO ══ -->
 <section class="hero">
@@ -651,6 +677,18 @@
   }
   initC('carousel1');
   initC('carousel2');
+
+  // Mobile Menu
+  function toggleMobileMenu() {
+    document.getElementById('hamburger').classList.toggle('open');
+    document.getElementById('mobileMenu').classList.toggle('open');
+    document.body.style.overflow = document.getElementById('mobileMenu').classList.contains('open') ? 'hidden' : '';
+  }
+  function closeMobileMenu() {
+    document.getElementById('hamburger').classList.remove('open');
+    document.getElementById('mobileMenu').classList.remove('open');
+    document.body.style.overflow = '';
+  }
 
   // Reveal on scroll
   const els = document.querySelectorAll('.reveal');
