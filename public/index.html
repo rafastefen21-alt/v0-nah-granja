@@ -188,6 +188,54 @@
   /* PLACEHOLDER */
   .ph{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,var(--forest-mid),var(--sage));width:100%;height:100%}
   .ph span{color:rgba(255,255,255,.4);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;text-align:center;padding:0 24px;line-height:1.6}
+
+  /* ══ RESPONSIVO MOBILE ══ */
+  @media(max-width:900px){
+    nav{padding:16px 24px}
+    nav.solid{padding:12px 24px}
+    .nav-links{display:none}
+
+    .sobre{padding:60px 24px}
+    .sobre-grid{grid-template-columns:1fr;gap:40px}
+    .sobre-img-wrap img{height:320px}
+    .sobre-img-wrap::after{display:none}
+
+    .manifesto{padding:60px 24px}
+    .manifesto-q{font-size:18px}
+    .manifesto-q::before{font-size:80px;top:-28px;left:-8px}
+
+    .sala-pf{grid-template-columns:1fr}
+    .sala-info{padding:48px 24px}
+    .specs-row{flex-wrap:wrap;gap:20px}
+    .spec-val{font-size:28px}
+
+    .sala-pit{grid-template-columns:1fr}
+    .sala-dark{padding:48px 24px;order:2}
+    .sala-dark-img{order:1;min-height:320px}
+
+    /* CARROSSEL MOBILE - 1 slide por vez */
+    .carousel{padding:40px 24px 48px}
+    .carousel-header h2{font-size:32px}
+    .carousel-slide{width:100%}
+    .carousel-track{gap:0}
+    .carousel-slide img{aspect-ratio:4/5}
+    .carousel-caption{padding:20px 16px 14px}
+    .carousel-caption h4{font-size:18px}
+
+    .gastro{padding:60px 24px}
+    .gastro-hd{grid-template-columns:1fr;gap:40px}
+    .gastro-photos{grid-template-columns:1fr;grid-template-rows:auto}
+    .gastro-photos img:first-child{grid-column:1}
+
+    .cta-block{padding:80px 24px}
+    .cta-btns{flex-direction:column;align-items:center}
+    .contact-strip{flex-direction:column;gap:32px}
+
+    footer{flex-direction:column;gap:16px;text-align:center;padding:24px}
+
+    .mosaic{grid-template-columns:1fr;grid-template-rows:auto}
+    .mosaic-item:first-child{grid-row:span 1}
+  }
 </style>
 </head>
 <body>
@@ -534,7 +582,7 @@
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => nav.classList.toggle('solid', window.scrollY > 60));
 
-  // ── Carrossel 3 fotos por vez ──
+  // ── Carrossel responsivo (3 no desktop, 1 no mobile) ──
   const CS = {};
   function initC(id) {
     const num = id.replace('carousel','');
@@ -543,23 +591,34 @@
     const slides = Array.from(track.querySelectorAll('.carousel-slide'));
     const dotsEl = document.getElementById('dots'+num);
     const total = slides.length;
-    const perPage = 3;
-    const pages = Math.ceil(total / perPage);
     let cur = 0, timer;
 
-    // criar dots por página
-    for(let i=0;i<pages;i++){
-      const d = document.createElement('button');
-      d.className = 'c-dot'+(i===0?' on':'');
-      d.onclick = () => go(i);
-      dotsEl.appendChild(d);
+    function getPerPage() {
+      return window.innerWidth <= 900 ? 1 : 3;
+    }
+
+    function getPages() {
+      return Math.ceil(total / getPerPage());
+    }
+
+    function buildDots() {
+      dotsEl.innerHTML = '';
+      const pages = getPages();
+      for(let i=0;i<pages;i++){
+        const d = document.createElement('button');
+        d.className = 'c-dot'+(i===cur?' on':'');
+        d.onclick = () => go(i);
+        dotsEl.appendChild(d);
+      }
     }
 
     function go(page) {
+      const pages = getPages();
+      const perPage = getPerPage();
       cur = (page + pages) % pages;
-      // calcula largura de 1 slide + gap
-      const slideW = slides[0].offsetWidth + 16;
-      track.style.transform = `translateX(-${cur * perPage * slideW}px)`;
+      const slideW = slides[0].offsetWidth;
+      const gap = window.innerWidth <= 900 ? 0 : 16;
+      track.style.transform = `translateX(-${cur * perPage * (slideW + gap)}px)`;
       dotsEl.querySelectorAll('.c-dot').forEach((d,i) => d.classList.toggle('on', i===cur));
     }
 
@@ -569,9 +628,18 @@
     document.getElementById(id).addEventListener('mouseenter', stop);
     document.getElementById(id).addEventListener('mouseleave', start);
 
-    // recalcular no resize
-    window.addEventListener('resize', () => go(cur));
+    // recalcular e rebuildar dots no resize
+    let lastWidth = window.innerWidth;
+    window.addEventListener('resize', () => {
+      if ((lastWidth <= 900) !== (window.innerWidth <= 900)) {
+        cur = 0;
+        buildDots();
+      }
+      lastWidth = window.innerWidth;
+      go(cur);
+    });
 
+    buildDots();
     CS[id] = { go, getPage: () => cur };
     start();
   }
