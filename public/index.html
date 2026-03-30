@@ -142,9 +142,11 @@
   .sala-dark .cap-n{color:var(--sand)}
   .sala-dark .cap-l{color:rgba(255,255,255,.45)}
   .sala-dark .cap-grid{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.08)}
-  .sala-dark-img{overflow:hidden}
-  .sala-dark-img img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease;display:block}
-  .sala-dark-img:hover img{transform:scale(1.04)}
+  .sala-dark-img{overflow:hidden;position:relative}
+  .sala-dark-img .crossfade{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:opacity .8s ease}
+  .sala-dark-img .crossfade.hidden{opacity:0}
+  .sala-dark-img .crossfade.visible{opacity:1}
+  .sala-dark-img:hover .crossfade{transform:none}
 
   /* MOSAICO */
   .mosaic{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:320px 320px;gap:4px}
@@ -473,11 +475,14 @@
         <div class="cap-item"><div class="cap-n">18</div><div class="cap-l">Círculo</div></div>
       </div>
     </div>
-    <div class="sala-dark-img">
-      <!-- ★ foto 8 — poltronas laranja/verde, projeção -->
-      <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-03-26%20at%2009.22.02-84731L51WvmzTcTDOdLB43fiaysSd9.jpeg" alt="Sala Pitangueiras"
-        onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'ph',style:'min-height:640px',innerHTML:'<span>★ Foto 8 — Sala Pitangueiras</span>'}))">
-    </div>
+  <div class="sala-dark-img" id="pitCrossfade">
+    <img class="crossfade visible" id="pitImg0"
+      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-03-26%20at%2009.22.02-84731L51WvmzTcTDOdLB43fiaysSd9.jpeg"
+      alt="Sala Pitangueiras — configuração reunião">
+    <img class="crossfade hidden" id="pitImg1"
+      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/11%20%281%29-22bPymuY6li3Hu8ZFPcUPky7k6OTT9.jpg"
+      alt="Sala Pitangueiras — configuração auditório">
+  </div>
   </div>
 
   <!-- ══ CARROSSEL JARDIM PITANGUEIRAS ══ -->
@@ -728,6 +733,19 @@
   }
   initC('carousel1');
   initC('carousel2');
+
+  // Crossfade Sala Pitangueiras
+  (function() {
+    let cur = 0;
+    setInterval(function() {
+      const imgs = document.querySelectorAll('#pitCrossfade .crossfade');
+      imgs[cur].classList.remove('visible');
+      imgs[cur].classList.add('hidden');
+      cur = (cur + 1) % imgs.length;
+      imgs[cur].classList.remove('hidden');
+      imgs[cur].classList.add('visible');
+    }, 2000);
+  })();
 
   // Mobile Menu
   function toggleMobileMenu() {
