@@ -54,8 +54,15 @@
   .gallery-item.large{grid-column:span 2;grid-row:span 2;aspect-ratio:auto}
   .gallery-placeholder{background:linear-gradient(135deg,var(--forest-mid),var(--sage));display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;text-align:center;padding:20px}
 
+  /* CTA CONTATO */
+  .cta-contato{background:var(--forest);padding:80px 80px;text-align:center}
+  .cta-contato h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,44px);font-weight:300;font-style:italic;color:#fff;margin-bottom:12px}
+  .cta-contato p{font-size:15px;color:rgba(255,255,255,.7);font-weight:300;margin-bottom:36px;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.7}
+  .cta-btn{display:inline-flex;align-items:center;gap:10px;background:var(--sand);color:var(--forest);text-decoration:none;padding:18px 48px;font-size:10.5px;letter-spacing:3px;text-transform:uppercase;font-weight:700;transition:all .3s}
+  .cta-btn:hover{background:#fff;transform:translateY(-2px);box-shadow:0 10px 32px rgba(0,0,0,.2)}
+
   /* FOOTER */
-  footer{background:#0D1810;padding:30px 80px;display:flex;align-items:center;justify-content:space-between}
+  footer{background:#1a2e1e;padding:30px 80px;display:flex;align-items:center;justify-content:space-between}
   .f-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;font-style:italic;color:rgba(255,255,255,.38);letter-spacing:2px}
   .f-copy{font-size:10.5px;color:rgba(255,255,255,.28);letter-spacing:.5px}
   footer a{color:rgba(255,255,255,.36);text-decoration:none;font-size:11px;transition:color .2s}
@@ -206,6 +213,13 @@
     </div>
   </div>
 </main>
+
+<!-- CTA CONTATO -->
+<section class="cta-contato">
+  <h2>Pronto para reservar?</h2>
+  <p>Entre em contato e solicite um orçamento personalizado para o seu evento.</p>
+  <a href="index.html#contato" class="cta-btn">Solicitar Orçamento</a>
+</section>
 
 <!-- FOOTER -->
 <footer>
