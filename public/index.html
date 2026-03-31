@@ -7,7 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --cream:#F6F1E9; --cream-dark:#EDE5D2; --forest:#1C2B20; --forest-mid:#2A3D2E;
+    --cream:#F6F1E9; --cream-dark:#EDE5D2; --forest:#2A3D2E; --forest-mid:#2A3D2E;
     --sage:#4E6E51; --sage-light:#7A9E7D; --sand:#C4A468; --sand-light:#DDD0B0;
     --text:#252F23; --text-light:#5A6655; --white:#FDFAF4;
   }
@@ -17,7 +17,7 @@
 
   /* NAV */
   nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:22px 64px;transition:all .45s ease}
-  nav.solid{background:rgba(26,40,29,.97);padding:14px 64px;backdrop-filter:blur(12px)}
+  nav.solid{background:rgba(42,61,46,.97);padding:14px 64px;backdrop-filter:blur(12px)}
   .nav-logo{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;font-style:italic;color:#fff;letter-spacing:2px;text-decoration:none}
   .nav-links{display:flex;gap:36px;list-style:none;align-items:center}
   .nav-links a{color:rgba(255,255,255,.78);text-decoration:none;font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;font-weight:500;transition:color .2s}
@@ -31,7 +31,7 @@
   .nav-hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
   .nav-hamburger.open span:nth-child(2){opacity:0}
   .nav-hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
-  .mobile-menu{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(26,40,29,.98);z-index:199;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:32px;opacity:0;visibility:hidden;transition:all .4s ease}
+  .mobile-menu{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(42,61,46,.98);z-index:199;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:32px;opacity:0;visibility:hidden;transition:all .4s ease}
   .mobile-menu.open{opacity:1;visibility:visible}
   .mobile-menu a{color:#fff;text-decoration:none;font-size:14px;letter-spacing:3px;text-transform:uppercase;font-weight:500;transition:color .2s}
   .mobile-menu a:hover{color:var(--sand)}
@@ -94,8 +94,8 @@
   .planta-section .intro{font-size:15px;color:var(--text-light);font-weight:300;line-height:1.7;margin-bottom:48px;max-width:600px;margin-left:auto;margin-right:auto}
   .planta-container{position:relative;display:inline-block;max-width:100%;perspective:1500px}
   .planta-container img.planta-base{width:100%;height:auto;display:block;transition:transform .6s ease}
-  .planta-hotspot{position:absolute;cursor:pointer;transition:all .3s ease;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;background:rgba(28,43,32,.08);border:3px solid transparent;text-decoration:none}
-  .planta-hotspot:hover{opacity:1;background:rgba(28,43,32,.12);border-color:var(--forest)}
+  .planta-hotspot{position:absolute;cursor:pointer;transition:all .3s ease;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;background:rgba(42,61,46,.08);border:3px solid transparent;text-decoration:none}
+  .planta-hotspot:hover{opacity:1;background:rgba(42,61,46,.12);border-color:var(--forest)}
   .planta-hotspot span{font-family:'Raleway',sans-serif;font-size:14px;font-weight:700;color:var(--forest);text-transform:uppercase;letter-spacing:1px;text-align:center;line-height:1.3}
   .planta-hotspot small{font-size:11px;font-weight:500;color:var(--forest);margin-top:2px}
   /* Transição 3D ao clicar */
@@ -220,12 +220,12 @@
   .form-group select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%235A6655' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center}
   .form-buttons{display:flex;flex-direction:column;gap:12px;align-items:center;margin-top:12px}
   .form-submit{background:var(--forest);color:#fff;border:none;padding:18px 40px;font-family:'Raleway',sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:700;cursor:pointer;transition:all .3s}
-  .form-submit:hover{background:var(--sage);transform:translateY(-2px);box-shadow:0 8px 24px rgba(28,43,32,.25)}
+  .form-submit:hover{background:var(--sage);transform:translateY(-2px);box-shadow:0 8px 24px rgba(42,61,46,.25)}
   .form-email{background:transparent;border:1px solid var(--forest);color:var(--forest)}
   .form-email:hover{background:var(--forest);color:#fff}
 
   /* FOOTER */
-  footer{background:#0D1810;padding:30px 80px;display:flex;align-items:center;justify-content:space-between}
+  footer{background:#1a2e1e;padding:30px 80px;display:flex;align-items:center;justify-content:space-between}
   .f-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;font-style:italic;color:rgba(255,255,255,.38);letter-spacing:2px}
   .f-copy{font-size:10.5px;color:rgba(255,255,255,.28);letter-spacing:.5px}
   footer a{color:rgba(255,255,255,.36);text-decoration:none;font-size:11px;transition:color .2s}
@@ -442,10 +442,10 @@
   </div>
 
   <!-- ══ CARROSSEL JARDIM PAU-FERRO ══ -->
-  <div class="carousel" id="carousel1">
+  <div class="carousel" id="carousel1" style="background:var(--white)">
     <div class="carousel-header">
-      <h2>Jardim Pau-Ferro</h2>
-      <p>Gramado exuberante com área coberta, integrado à sala principal</p>
+      <h2 style="color:var(--forest)">Jardim Pau-Ferro</h2>
+      <p style="color:var(--text-light)">Gramado exuberante com área coberta, integrado à sala principal</p>
     </div>
     <div class="carousel-viewport" id="viewport1">
       <div class="carousel-track" id="track1">
@@ -458,7 +458,7 @@
 
         <div class="carousel-slide">
           <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/jardim-evento-aereo.jpg-T3efLNR8zlv8PVn9xJjA37kcWkopH2.webp" alt="Evento ao ar livre"
-            onerror="this.style.cssText='width:100%;aspect-ratio:3/4;object-fit:cover;display:block;background:linear-gradient(135deg,#1C2B20,#4E6E51)'">
+            onerror="this.style.cssText='width:100%;aspect-ratio:3/4;object-fit:cover;display:block;background:linear-gradient(135deg,#2A3D2E,#4E6E51)'">
           <div class="carousel-caption"><h4>Ao Ar Livre</h4><span>Eventos integrados ao jardim</span></div>
         </div>
 
@@ -470,28 +470,28 @@
 
         <div class="carousel-slide">
           <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/20230127_131752-mi5MEeuAa0eX8q30cEJDxnKGigIG6d.jpg" alt="Sagui no jardim"
-            onerror="this.style.cssText='width:100%;aspect-ratio:3/4;object-fit:cover;display:block;background:linear-gradient(135deg,#1C2B20,#2A3D2E)'">
+            onerror="this.style.cssText='width:100%;aspect-ratio:3/4;object-fit:cover;display:block;background:linear-gradient(135deg,#2A3D2E,#4E6E51)'">
           <div class="carousel-caption"><h4>Fauna Local</h4><span>Saguis visitam o jardim</span></div>
         </div>
 
         <div class="carousel-slide">
           <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/fachada-arvores-TJebhfD1Vi9Gswwdlly2JzIjJtwQtt.png" alt="Arvore Pau-Ferro"
-            onerror="this.style.cssText='width:100%;aspect-ratio:3/4;object-fit:cover;display:block;background:linear-gradient(135deg,#2A3D2E,#1C2B20)'">
+            onerror="this.style.cssText='width:100%;aspect-ratio:3/4;object-fit:cover;display:block;background:linear-gradient(135deg,#2A3D2E,#1a2e1e)'">
           <div class="carousel-caption"><h4>O Pau-Ferro</h4><span>Arvore centenaria que da nome ao salao</span></div>
         </div>
 
         <div class="carousel-slide">
           <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/fachada-entrada-IKEvOmWuDClwI6HaM2aROfOrqO3YHU.jpg" alt="Fachada Nah Granja"
-            onerror="this.style.cssText='width:100%;aspect-ratio:3/4;object-fit:cover;display:block;background:linear-gradient(135deg,#2A3D2E,#1C2B20)'">
+            onerror="this.style.cssText='width:100%;aspect-ratio:3/4;object-fit:cover;display:block;background:linear-gradient(135deg,#2A3D2E,#1a2e1e)'">
           <div class="carousel-caption"><h4>Nah Granja</h4><span>Refugio verde em Sao Paulo</span></div>
         </div>
 
       </div>
     </div>
     <div class="carousel-footer">
-      <button class="carousel-btn c-prev" onclick="moveC('carousel1',-1)">‹</button>
+      <button class="carousel-btn c-prev" onclick="moveC('carousel1',-1)" style="background:rgba(42,61,46,.1);border-color:rgba(42,61,46,.25);color:var(--forest)">‹</button>
       <div class="carousel-dots" id="dots1"></div>
-      <button class="carousel-btn c-next" onclick="moveC('carousel1',1)">›</button>
+      <button class="carousel-btn c-next" onclick="moveC('carousel1',1)" style="background:rgba(42,61,46,.1);border-color:rgba(42,61,46,.25);color:var(--forest)">›</button>
     </div>
   </div>
 
@@ -519,11 +519,11 @@
     </div>
   <div class="sala-dark-img" id="pitCrossfade">
     <img class="crossfade visible" id="pitImg0"
-      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-03-26%20at%2009.22.02-84731L51WvmzTcTDOdLB43fiaysSd9.jpeg"
-      alt="Sala Pitangueiras — configuração reunião">
+      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pt1-72orZe0khdB9GVNjzFWt4Qt9CqbUMp.jpg"
+      alt="Sala Pitangueiras — configuração escolar">
     <img class="crossfade hidden" id="pitImg1"
-      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/11%20%281%29-22bPymuY6li3Hu8ZFPcUPky7k6OTT9.jpg"
-      alt="Sala Pitangueiras — configuração auditório">
+      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pt2-Ou9AHmYbjZQK3vhGLFWGbQo5pSCqRN.jpg"
+      alt="Sala Pitangueiras — configuração auditório poltronas">
   </div>
   </div>
 
@@ -543,34 +543,17 @@
         </div>
 
         <div class="carousel-slide">
-          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/jardim-evento-aereo.jpg-T3efLNR8zlv8PVn9xJjA37kcWkopH2.webp" alt="Evento no jardim"
-            onerror="this.style.cssText='width:100%;aspect-ratio:3/4;object-fit:cover;display:block;background:linear-gradient(135deg,#1C2B20,#4E6E51)'">
-          <div class="carousel-caption"><h4>Eventos ao Ar Livre</h4><span>Integração com a natureza</span></div>
+          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/jdpt1-tCounRCkR3UIrNGgnfxyvrBslnli0v.jpg" alt="Sagui no jardim"
+            onerror="this.style.cssText='width:100%;aspect-ratio:3/4;object-fit:cover;display:block;background:linear-gradient(135deg,#2A3D2E,#4E6E51)'">
+          <div class="carousel-caption"><h4>Fauna do Jardim</h4><span>Saguis que visitam as pitangueiras</span></div>
         </div>
 
         <div class="carousel-slide">
-          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/fachada-arvores-TJebhfD1Vi9Gswwdlly2JzIjJtwQtt.png" alt="Fachada com árvores"
-            onerror="this.style.cssText='width:100%;aspect-ratio:3/4;object-fit:cover;display:block;background:linear-gradient(135deg,#2A3D2E,#1C2B20)'">
-          <div class="carousel-caption"><h4>Copa Verde</h4><span>Sombra natural das pitangueiras</span></div>
+          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/jdpt2-WEcrDckzn5mExDS42IYMGjHanYBE64.jpg" alt="Decoração no jardim"
+            onerror="this.style.cssText='width:100%;aspect-ratio:3/4;object-fit:cover;display:block;background:linear-gradient(135deg,#2A3D2E,#1a2e1e)'">
+          <div class="carousel-caption"><h4>Detalhes do Jardim</h4><span>Decoração e natureza</span></div>
         </div>
 
-        <div class="carousel-slide">
-          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/cafe-manha.jpg-ZRGhJXlFt5iMzSalCmhTsE7a3rbi5h.webp" alt="Café da manhã"
-            onerror="this.style.cssText='width:100%;aspect-ratio:3/4;object-fit:cover;display:block;background:linear-gradient(135deg,#2E4035,#5C7A5E)'">
-          <div class="carousel-caption"><h4>Coffee Break</h4><span>Gastronomia no jardim</span></div>
-        </div>
-
-        <div class="carousel-slide">
-          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/almoco.jpg-319yF0CkHMer9BfNHsElQUOwKWT4nH.webp" alt="Almoço"
-            onerror="this.style.cssText='width:100%;aspect-ratio:3/4;object-fit:cover;display:block;background:linear-gradient(135deg,#1C2B20,#2A3D2E)'">
-          <div class="carousel-caption"><h4>Almoço</h4><span>Buffet com vista para o verde</span></div>
-        </div>
-
-        <div class="carousel-slide">
-          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/fachada-entrada-IKEvOmWuDClwI6HaM2aROfOrqO3YHU.jpg" alt="Fachada entrada"
-            onerror="this.style.cssText='width:100%;aspect-ratio:3/4;object-fit:cover;display:block;background:linear-gradient(135deg,#2A3D2E,#1C2B20)'">
-          <div class="carousel-caption"><h4>Nah Granja</h4><span>Entrada principal</span></div>
-        </div>
 
       </div>
     </div>
