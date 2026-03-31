@@ -87,6 +87,22 @@
   .tag{border:1px solid var(--sand-light);padding:8px 15px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);font-weight:500;cursor:default;transition:all .2s}
   .tag:hover{background:var(--forest);color:var(--sand);border-color:var(--forest)}
 
+  /* PLANTA INTERATIVA */
+  .planta-section{background:#fff;padding:100px 80px}
+  .planta-inner{max-width:1000px;margin:0 auto;text-align:center}
+  .planta-section .heading{margin-bottom:16px}
+  .planta-section .intro{font-size:15px;color:var(--text-light);font-weight:300;line-height:1.7;margin-bottom:48px;max-width:600px;margin-left:auto;margin-right:auto}
+  .planta-container{position:relative;display:inline-block;max-width:100%;perspective:1500px}
+  .planta-container img.planta-base{width:100%;height:auto;display:block;transition:transform .6s ease}
+  .planta-hotspot{position:absolute;cursor:pointer;transition:all .3s ease;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;background:rgba(28,43,32,.08);border:3px solid transparent;text-decoration:none}
+  .planta-hotspot:hover{opacity:1;background:rgba(28,43,32,.12);border-color:var(--forest)}
+  .planta-hotspot span{font-family:'Raleway',sans-serif;font-size:14px;font-weight:700;color:var(--forest);text-transform:uppercase;letter-spacing:1px;text-align:center;line-height:1.3}
+  .planta-hotspot small{font-size:11px;font-weight:500;color:var(--forest);margin-top:2px}
+  /* Transição 3D ao clicar */
+  .planta-container.zoom-in{animation:zoomInto .8s ease-out forwards}
+  .planta-container.zoom-in img.planta-base{transform:perspective(1500px) rotateX(15deg) scale(1.8);opacity:0}
+  @keyframes zoomInto{0%{transform:perspective(1500px) rotateX(0) scale(1)}100%{transform:perspective(1500px) rotateX(20deg) scale(2.5) translateY(-20%);opacity:0}}
+
   /* MANIFESTO */
   .manifesto{background:var(--forest);padding:120px 80px;position:relative;overflow:hidden;text-align:center}
   .manifesto::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 60%,rgba(78,110,81,.18) 0%,transparent 68%)}
@@ -142,9 +158,11 @@
   .sala-dark .cap-n{color:var(--sand)}
   .sala-dark .cap-l{color:rgba(255,255,255,.45)}
   .sala-dark .cap-grid{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.08)}
-  .sala-dark-img{overflow:hidden}
-  .sala-dark-img img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease;display:block}
-  .sala-dark-img:hover img{transform:scale(1.04)}
+  .sala-dark-img{overflow:hidden;position:relative}
+  .sala-dark-img .crossfade{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:opacity .8s ease}
+  .sala-dark-img .crossfade.hidden{opacity:0}
+  .sala-dark-img .crossfade.visible{opacity:1}
+  .sala-dark-img:hover .crossfade{transform:none}
 
   /* MOSAICO */
   .mosaic{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:320px 320px;gap:4px}
@@ -233,6 +251,10 @@
     .sobre-grid{grid-template-columns:1fr;gap:40px}
     .sobre-img-wrap img{height:320px}
     .sobre-img-wrap::after{display:none}
+
+    .planta-section{padding:60px 24px}
+    .planta-hotspot span{font-size:10px}
+    .planta-hotspot small{font-size:8px}
 
     .manifesto{padding:60px 24px}
     .manifesto-q{font-size:18px}
@@ -357,6 +379,28 @@
   </div>
 </section>
 
+<!-- ══ CONHEÇA NOSSA CASA ══ -->
+<section class="planta-section" id="planta">
+  <div class="planta-inner">
+    <p class="eyebrow reveal">Explore o espaço</p>
+    <h2 class="heading reveal">Conheça nossa casa</h2>
+    <p class="intro reveal">Passe o mouse sobre as áreas da planta para descobrir cada ambiente do Nah Granja.</p>
+    <div class="planta-container reveal" id="plantaContainer">
+      <img class="planta-base" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-KO13YhAaY3EWvDJXAiRQ4XMxjf3FLN.png" alt="Planta Nah Granja">
+      <!-- Complexo Pau-Ferro (lado esquerdo - formato em L) -->
+      <a href="sala-pau-ferro.html" class="planta-hotspot" onclick="navigateWithZoom(event, 'sala-pau-ferro.html')" style="left:3%;top:5%;width:32%;height:78%;clip-path:polygon(0 0, 75% 0, 75% 42%, 100% 42%, 100% 100%, 0 100%);">
+        <span>Complexo<br>Pau-Ferro</span>
+        <small>Clique e conheça</small>
+      </a>
+      <!-- Complexo Pitangueiras (lado direito) -->
+      <a href="sala-pitangueiras.html" class="planta-hotspot" onclick="navigateWithZoom(event, 'sala-pitangueiras.html')" style="right:3%;top:5%;width:30%;height:72%;clip-path:polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 42%, 25% 42%, 25% 0);">
+        <span>Complexo<br>Pitangueiras</span>
+        <small>Clique e conheça</small>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ══ MANIFESTO ══ -->
 <section class="manifesto">
   <p class="manifesto-q reveal">
@@ -473,11 +517,14 @@
         <div class="cap-item"><div class="cap-n">18</div><div class="cap-l">Círculo</div></div>
       </div>
     </div>
-    <div class="sala-dark-img">
-      <!-- ★ foto 8 — poltronas laranja/verde, projeção -->
-      <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-03-26%20at%2009.22.02-84731L51WvmzTcTDOdLB43fiaysSd9.jpeg" alt="Sala Pitangueiras"
-        onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'ph',style:'min-height:640px',innerHTML:'<span>★ Foto 8 — Sala Pitangueiras</span>'}))">
-    </div>
+  <div class="sala-dark-img" id="pitCrossfade">
+    <img class="crossfade visible" id="pitImg0"
+      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-03-26%20at%2009.22.02-84731L51WvmzTcTDOdLB43fiaysSd9.jpeg"
+      alt="Sala Pitangueiras — configuração reunião">
+    <img class="crossfade hidden" id="pitImg1"
+      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/11%20%281%29-22bPymuY6li3Hu8ZFPcUPky7k6OTT9.jpg"
+      alt="Sala Pitangueiras — configuração auditório">
+  </div>
   </div>
 
   <!-- ══ CARROSSEL JARDIM PITANGUEIRAS ══ -->
@@ -728,6 +775,29 @@
   }
   initC('carousel1');
   initC('carousel2');
+
+  // Navegação com zoom 3D na planta
+  function navigateWithZoom(e, url) {
+    e.preventDefault();
+    const container = document.getElementById('plantaContainer');
+    container.classList.add('zoom-in');
+    setTimeout(() => {
+      window.location.href = url;
+    }, 600);
+  }
+
+  // Crossfade Sala Pitangueiras
+  (function() {
+    let cur = 0;
+    setInterval(function() {
+      const imgs = document.querySelectorAll('#pitCrossfade .crossfade');
+      imgs[cur].classList.remove('visible');
+      imgs[cur].classList.add('hidden');
+      cur = (cur + 1) % imgs.length;
+      imgs[cur].classList.remove('hidden');
+      imgs[cur].classList.add('visible');
+    }, 2000);
+  })();
 
   // Mobile Menu
   function toggleMobileMenu() {
