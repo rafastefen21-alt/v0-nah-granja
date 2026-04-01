@@ -38,14 +38,16 @@
   /* CAPACIDADES */
   .cap-section{margin-bottom:64px}
   .cap-title{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--sage);font-weight:700;margin-bottom:32px}
-  .cap-grid{display:grid;grid-template-columns:repeat(9,1fr);gap:16px}
+  .cap-grid-wrapper{overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:16px;margin:0 -24px;padding-left:24px;padding-right:24px}
+  .cap-grid{display:flex;flex-direction:row;gap:0;min-width:max-content}
   .cap-grid-bottom{display:none}
-  .cap-card{background:var(--cream-dark);border:1px solid var(--sand-light);padding:24px 20px 20px;text-align:center;transition:all .3s ease}
-  .cap-card:hover{border-color:var(--sage);transform:translateY(-3px);box-shadow:0 10px 28px rgba(28,43,32,.1)}
-  .cap-card-diagram{width:100%;height:130px;display:block;margin-bottom:16px}
-  .cap-card-num{font-family:'Cormorant Garamond',serif;font-size:56px;color:var(--forest);line-height:1;margin-bottom:2px}
-  .cap-card-label{font-size:9.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--text-light);font-weight:700;margin-bottom:10px}
-  .cap-card-desc{font-size:12px;color:var(--text-light);line-height:1.6;font-weight:300;max-width:220px;margin:0 auto}
+  .cap-card{background:var(--cream-dark);border-right:1px solid var(--sand-light);border-top:1px solid var(--sand-light);border-bottom:1px solid var(--sand-light);padding:28px 20px 24px;text-align:center;transition:all .3s ease;width:170px;flex-shrink:0;display:flex;flex-direction:column;align-items:center}
+  .cap-card:first-child{border-left:1px solid var(--sand-light)}
+  .cap-card:hover{border-color:var(--sage);background:var(--cream)}
+  .cap-card-diagram{width:100%;height:110px;display:block;margin-bottom:20px;flex-shrink:0}
+  .cap-card-num{font-family:'Cormorant Garamond',serif;font-size:64px;color:var(--forest);line-height:1;margin-bottom:4px}
+  .cap-card-label{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);font-weight:700;margin-bottom:12px;line-height:1.4}
+  .cap-card-desc{font-size:11.5px;color:var(--text-light);line-height:1.65;font-weight:300;width:100%}
 
   /* GALERIA */
   .gallery-section{margin-top:64px}
@@ -78,10 +80,10 @@
     .page-content{padding:48px 24px 64px}
     .gallery-grid{grid-template-columns:1fr 1fr}
     .gallery-item.large{grid-column:span 2}
-    .cap-grid{grid-template-columns:repeat(3,1fr)}
+    .cap-card{width:140px}
     .cap-card-diagram{height:90px}
-    .cap-card-num{font-size:42px}
-    .cap-card-desc{font-size:11px}
+    .cap-card-num{font-size:48px}
+    .cap-card-desc{font-size:10.5px}
     footer{flex-direction:column;gap:16px;text-align:center;padding:24px}
   }
 </style>
@@ -117,7 +119,7 @@
     <div class="cap-section">
       <h3 class="cap-title">Capacidades por Configuração</h3>
 
-      <!-- Row 1: 3 cards -->
+      <div class="cap-grid-wrapper">
       <div class="cap-grid">
 
         <!-- ESCOLAR -->
@@ -461,8 +463,9 @@
           <div class="cap-card-desc">Uma única mesa longa e centralizada para refeições em família (jantar ou almoço) ou reuniões executivas.</div>
         </div>
 
-      </div>
-    </div>
+      </div><!-- end cap-grid -->
+      </div><!-- end cap-grid-wrapper -->
+    </div><!-- end cap-section -->
 
     <div class="gallery-section">
       <h3 class="cap-title">Galeria de Fotos</h3>
