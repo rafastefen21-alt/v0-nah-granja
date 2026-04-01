@@ -37,13 +37,15 @@
 
   /* CAPACIDADES */
   .cap-section{margin-bottom:64px}
-  .cap-title{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--sage);font-weight:700;margin-bottom:24px}
-  .cap-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:16px}
-  .cap-card{background:var(--cream);border:1px solid var(--sand-light);padding:28px 20px;text-align:center;transition:all .3s ease}
-  .cap-card:hover{border-color:var(--sage);transform:translateY(-4px);box-shadow:0 12px 32px rgba(28,43,32,.1)}
-  .cap-card-num{font-family:'Cormorant Garamond',serif;font-size:42px;color:var(--forest);line-height:1;margin-bottom:8px}
-  .cap-card-label{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-light);font-weight:600}
-  .cap-card-icon{width:32px;height:32px;margin-bottom:12px;opacity:.6}
+  .cap-title{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--sage);font-weight:700;margin-bottom:32px}
+  .cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .cap-grid-bottom{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:20px}
+  .cap-card{background:var(--cream-dark);border:1px solid var(--sand-light);padding:24px 20px 20px;text-align:center;transition:all .3s ease}
+  .cap-card:hover{border-color:var(--sage);transform:translateY(-3px);box-shadow:0 10px 28px rgba(28,43,32,.1)}
+  .cap-card-diagram{width:100%;height:130px;display:block;margin-bottom:16px}
+  .cap-card-num{font-family:'Cormorant Garamond',serif;font-size:56px;color:var(--forest);line-height:1;margin-bottom:2px}
+  .cap-card-label{font-size:9.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--text-light);font-weight:700;margin-bottom:10px}
+  .cap-card-desc{font-size:12px;color:var(--text-light);line-height:1.6;font-weight:300;max-width:220px;margin:0 auto}
 
   /* GALERIA */
   .gallery-section{margin-top:64px}
@@ -74,7 +76,8 @@
     .page-content{padding:48px 24px 64px}
     .gallery-grid{grid-template-columns:1fr 1fr}
     .gallery-item.large{grid-column:span 2}
-    .cap-grid{grid-template-columns:repeat(2,1fr)}
+    .cap-grid,.cap-grid-bottom{grid-template-columns:repeat(2,1fr)}
+    .cap-card-diagram{height:100px}
     footer{flex-direction:column;gap:16px;text-align:center;padding:24px}
   }
 </style>
@@ -109,85 +112,355 @@
 
     <div class="cap-section">
       <h3 class="cap-title">Capacidades por Configuração</h3>
+
+      <!-- Row 1: 3 cards -->
       <div class="cap-grid">
+
+        <!-- ESCOLAR -->
         <div class="cap-card">
-          <svg class="cap-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="3" y="8" width="18" height="10" rx="1"/>
-            <line x1="8" y1="8" x2="8" y2="18"/>
-            <line x1="16" y1="8" x2="16" y2="18"/>
+          <svg class="cap-card-diagram" viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="4" width="192" height="122" rx="3" fill="#e8e0d0" stroke="#8a7a60" stroke-width="3"/>
+            <!-- screen -->
+            <rect x="20" y="12" width="160" height="10" rx="2" fill="#8a7a60"/>
+            <!-- rows of desks + chairs: 6 rows x 4 desks -->
+            <g fill="#c8b898" stroke="#8a7a60" stroke-width="1">
+              <!-- row 1 -->
+              <rect x="18" y="32" width="34" height="10" rx="1"/><rect x="60" y="32" width="34" height="10" rx="1"/>
+              <rect x="102" y="32" width="34" height="10" rx="1"/><rect x="144" y="32" width="34" height="10" rx="1"/>
+              <!-- row 2 -->
+              <rect x="18" y="50" width="34" height="10" rx="1"/><rect x="60" y="50" width="34" height="10" rx="1"/>
+              <rect x="102" y="50" width="34" height="10" rx="1"/><rect x="144" y="50" width="34" height="10" rx="1"/>
+              <!-- row 3 -->
+              <rect x="18" y="68" width="34" height="10" rx="1"/><rect x="60" y="68" width="34" height="10" rx="1"/>
+              <rect x="102" y="68" width="34" height="10" rx="1"/><rect x="144" y="68" width="34" height="10" rx="1"/>
+              <!-- row 4 -->
+              <rect x="18" y="86" width="34" height="10" rx="1"/><rect x="60" y="86" width="34" height="10" rx="1"/>
+              <rect x="102" y="86" width="34" height="10" rx="1"/><rect x="144" y="86" width="34" height="10" rx="1"/>
+            </g>
+            <!-- chairs (small rects below each desk) -->
+            <g fill="#a89878" stroke="none">
+              <rect x="23" y="43" width="8" height="5" rx="1"/><rect x="65" y="43" width="8" height="5" rx="1"/>
+              <rect x="107" y="43" width="8" height="5" rx="1"/><rect x="149" y="43" width="8" height="5" rx="1"/>
+              <rect x="23" y="61" width="8" height="5" rx="1"/><rect x="65" y="61" width="8" height="5" rx="1"/>
+              <rect x="107" y="61" width="8" height="5" rx="1"/><rect x="149" y="61" width="8" height="5" rx="1"/>
+              <rect x="23" y="79" width="8" height="5" rx="1"/><rect x="65" y="79" width="8" height="5" rx="1"/>
+              <rect x="107" y="79" width="8" height="5" rx="1"/><rect x="149" y="79" width="8" height="5" rx="1"/>
+              <rect x="23" y="97" width="8" height="5" rx="1"/><rect x="65" y="97" width="8" height="5" rx="1"/>
+              <rect x="107" y="97" width="8" height="5" rx="1"/><rect x="149" y="97" width="8" height="5" rx="1"/>
+            </g>
           </svg>
           <div class="cap-card-num">48</div>
           <div class="cap-card-label">Escolar</div>
+          <div class="cap-card-desc">Fileiras de cadeiras e mesas otimizadas para palestras e aulas de alta densidade.</div>
         </div>
+
+        <!-- AUDITÓRIO -->
         <div class="cap-card">
-          <svg class="cap-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="4" y="6" width="16" height="12" rx="1"/>
-            <line x1="4" y1="10" x2="20" y2="10"/>
-            <line x1="4" y1="14" x2="20" y2="14"/>
+          <svg class="cap-card-diagram" viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="4" width="192" height="122" rx="3" fill="#e8e0d0" stroke="#8a7a60" stroke-width="3"/>
+            <!-- screen/stage -->
+            <rect x="20" y="12" width="160" height="10" rx="2" fill="#8a7a60"/>
+            <!-- presenter circle -->
+            <ellipse cx="100" cy="36" rx="10" ry="7" fill="#c8b898" stroke="#8a7a60" stroke-width="1"/>
+            <!-- arc rows of chairs -->
+            <g fill="#c8b898" stroke="#8a7a60" stroke-width="1">
+              <!-- arc row 1 -->
+              <rect x="52" y="50" width="9" height="9" rx="2"/><rect x="64" y="48" width="9" height="9" rx="2"/>
+              <rect x="76" y="47" width="9" height="9" rx="2"/><rect x="88" y="46" width="9" height="9" rx="2"/>
+              <rect x="100" y="46" width="9" height="9" rx="2"/><rect x="112" y="46" width="9" height="9" rx="2"/>
+              <rect x="124" y="47" width="9" height="9" rx="2"/><rect x="136" y="48" width="9" height="9" rx="2"/>
+              <rect x="148" y="50" width="9" height="9" rx="2"/>
+              <!-- arc row 2 -->
+              <rect x="38" y="63" width="9" height="9" rx="2"/><rect x="51" y="61" width="9" height="9" rx="2"/>
+              <rect x="64" y="59" width="9" height="9" rx="2"/><rect x="77" y="58" width="9" height="9" rx="2"/>
+              <rect x="90" y="57" width="9" height="9" rx="2"/><rect x="103" y="57" width="9" height="9" rx="2"/>
+              <rect x="116" y="58" width="9" height="9" rx="2"/><rect x="129" y="59" width="9" height="9" rx="2"/>
+              <rect x="142" y="61" width="9" height="9" rx="2"/><rect x="155" y="63" width="9" height="9" rx="2"/>
+              <!-- arc row 3 -->
+              <rect x="26" y="77" width="9" height="9" rx="2"/><rect x="39" y="74" width="9" height="9" rx="2"/>
+              <rect x="52" y="72" width="9" height="9" rx="2"/><rect x="65" y="70" width="9" height="9" rx="2"/>
+              <rect x="78" y="70" width="9" height="9" rx="2"/><rect x="91" y="69" width="9" height="9" rx="2"/>
+              <rect x="104" y="69" width="9" height="9" rx="2"/><rect x="117" y="70" width="9" height="9" rx="2"/>
+              <rect x="130" y="70" width="9" height="9" rx="2"/><rect x="143" y="72" width="9" height="9" rx="2"/>
+              <rect x="156" y="74" width="9" height="9" rx="2"/><rect x="169" y="77" width="9" height="9" rx="2"/>
+              <!-- arc row 4 -->
+              <rect x="20" y="91" width="9" height="9" rx="2"/><rect x="33" y="88" width="9" height="9" rx="2"/>
+              <rect x="46" y="86" width="9" height="9" rx="2"/><rect x="59" y="84" width="9" height="9" rx="2"/>
+              <rect x="72" y="83" width="9" height="9" rx="2"/><rect x="85" y="82" width="9" height="9" rx="2"/>
+              <rect x="98" y="82" width="9" height="9" rx="2"/><rect x="111" y="82" width="9" height="9" rx="2"/>
+              <rect x="124" y="83" width="9" height="9" rx="2"/><rect x="137" y="84" width="9" height="9" rx="2"/>
+              <rect x="150" y="86" width="9" height="9" rx="2"/><rect x="163" y="88" width="9" height="9" rx="2"/>
+              <rect x="174" y="91" width="9" height="9" rx="2"/>
+            </g>
           </svg>
           <div class="cap-card-num">80</div>
           <div class="cap-card-label">Auditório</div>
+          <div class="cap-card-desc">Cadeiras em semicírculo em torno de um ponto focal, ideal para grandes apresentações.</div>
         </div>
+
+        <!-- COQUETEL -->
         <div class="cap-card">
-          <svg class="cap-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <circle cx="12" cy="12" r="8"/>
-            <circle cx="12" cy="12" r="3"/>
+          <svg class="cap-card-diagram" viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="4" width="192" height="122" rx="3" fill="#e8e0d0" stroke="#8a7a60" stroke-width="3"/>
+            <!-- cocktail tables scattered -->
+            <g fill="#c8b898" stroke="#8a7a60" stroke-width="1">
+              <circle cx="38" cy="38" r="12"/><circle cx="80" cy="28" r="12"/><circle cx="122" cy="38" r="12"/>
+              <circle cx="165" cy="28" r="12"/><circle cx="28" cy="85" r="12"/><circle cx="72" cy="90" r="12"/>
+              <circle cx="115" cy="80" r="12"/><circle cx="160" cy="85" r="12"/>
+              <circle cx="52" cy="58" r="8"/><circle cx="138" cy="60" r="8"/>
+            </g>
+            <!-- standing people dots -->
+            <g fill="#8a7a60">
+              <circle cx="26" cy="28" r="3"/><circle cx="50" cy="26" r="3"/><circle cx="68" cy="18" r="3"/>
+              <circle cx="92" cy="18" r="3"/><circle cx="110" cy="28" r="3"/><circle cx="134" cy="26" r="3"/>
+              <circle cx="155" cy="18" r="3"/><circle cx="175" cy="18" r="3"/>
+              <circle cx="16" cy="75" r="3"/><circle cx="40" cy="75" r="3"/><circle cx="60" cy="80" r="3"/>
+              <circle cx="84" cy="80" r="3"/><circle cx="103" cy="70" r="3"/><circle cx="127" cy="70" r="3"/>
+              <circle cx="148" cy="75" r="3"/><circle cx="172" cy="75" r="3"/>
+            </g>
           </svg>
           <div class="cap-card-num">100</div>
           <div class="cap-card-label">Coquetel</div>
+          <div class="cap-card-desc">Formação de pé para eventos sociais, com áreas de trânsito livre e mesas de apoio.</div>
         </div>
+
+        <!-- FORMATO U -->
         <div class="cap-card">
-          <svg class="cap-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M4 8h16v10H4z"/>
-            <path d="M8 8V6h8v2"/>
+          <svg class="cap-card-diagram" viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="4" width="192" height="122" rx="3" fill="#e8e0d0" stroke="#8a7a60" stroke-width="3"/>
+            <!-- U-shape table -->
+            <rect x="20" y="25" width="160" height="12" rx="2" fill="#c8b898" stroke="#8a7a60" stroke-width="1"/>
+            <rect x="20" y="37" width="12" height="62" rx="2" fill="#c8b898" stroke="#8a7a60" stroke-width="1"/>
+            <rect x="168" y="37" width="12" height="62" rx="2" fill="#c8b898" stroke="#8a7a60" stroke-width="1"/>
+            <!-- chairs outside top -->
+            <g fill="#a89878" stroke="none">
+              <rect x="30" y="16" width="9" height="8" rx="1"/><rect x="44" y="16" width="9" height="8" rx="1"/>
+              <rect x="58" y="16" width="9" height="8" rx="1"/><rect x="72" y="16" width="9" height="8" rx="1"/>
+              <rect x="86" y="16" width="9" height="8" rx="1"/><rect x="100" y="16" width="9" height="8" rx="1"/>
+              <rect x="114" y="16" width="9" height="8" rx="1"/><rect x="128" y="16" width="9" height="8" rx="1"/>
+              <rect x="142" y="16" width="9" height="8" rx="1"/><rect x="156" y="16" width="9" height="8" rx="1"/>
+              <!-- chairs left side -->
+              <rect x="10" y="42" width="8" height="9" rx="1"/><rect x="10" y="55" width="8" height="9" rx="1"/>
+              <rect x="10" y="68" width="8" height="9" rx="1"/><rect x="10" y="81" width="8" height="9" rx="1"/>
+              <!-- chairs right side -->
+              <rect x="182" y="42" width="8" height="9" rx="1"/><rect x="182" y="55" width="8" height="9" rx="1"/>
+              <rect x="182" y="68" width="8" height="9" rx="1"/><rect x="182" y="81" width="8" height="9" rx="1"/>
+            </g>
+            <!-- chairs inside U (presenter space) -->
+            <g fill="#a89878" stroke="none">
+              <rect x="36" y="102" width="9" height="8" rx="1"/><rect x="50" y="102" width="9" height="8" rx="1"/>
+              <rect x="64" y="102" width="9" height="8" rx="1"/><rect x="78" y="102" width="9" height="8" rx="1"/>
+              <rect x="92" y="102" width="9" height="8" rx="1"/><rect x="106" y="102" width="9" height="8" rx="1"/>
+              <rect x="120" y="102" width="9" height="8" rx="1"/><rect x="134" y="102" width="9" height="8" rx="1"/>
+              <rect x="148" y="102" width="9" height="8" rx="1"/>
+            </g>
           </svg>
           <div class="cap-card-num">28</div>
           <div class="cap-card-label">Formato U</div>
+          <div class="cap-card-desc">Mesas em U, proporcionando visibilidade entre os participantes e um facilitador central.</div>
         </div>
+
+        <!-- MEIA LUA -->
         <div class="cap-card">
-          <svg class="cap-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <circle cx="12" cy="12" r="8"/>
-            <path d="M12 4v4M12 16v4"/>
+          <svg class="cap-card-diagram" viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="4" width="192" height="122" rx="3" fill="#e8e0d0" stroke="#8a7a60" stroke-width="3"/>
+            <!-- screen -->
+            <rect x="20" y="12" width="160" height="10" rx="2" fill="#8a7a60"/>
+            <!-- arc rows of tables -->
+            <g fill="#c8b898" stroke="#8a7a60" stroke-width="1">
+              <!-- row 1 arc tables -->
+              <path d="M55,50 Q100,42 145,50 L145,58 Q100,50 55,58 Z"/>
+              <!-- row 2 arc tables -->
+              <path d="M35,68 Q100,56 165,68 L165,77 Q100,65 35,77 Z"/>
+              <!-- row 3 arc tables -->
+              <path d="M18,88 Q100,72 182,88 L182,97 Q100,81 18,97 Z"/>
+            </g>
+            <!-- chairs behind each arc (dots) -->
+            <g fill="#a89878" stroke="none">
+              <rect x="60" y="60" width="7" height="6" rx="1"/><rect x="72" y="57" width="7" height="6" rx="1"/>
+              <rect x="84" y="55" width="7" height="6" rx="1"/><rect x="96" y="54" width="7" height="6" rx="1"/>
+              <rect x="108" y="54" width="7" height="6" rx="1"/><rect x="120" y="55" width="7" height="6" rx="1"/>
+              <rect x="132" y="57" width="7" height="6" rx="1"/>
+
+              <rect x="42" y="79" width="7" height="6" rx="1"/><rect x="54" y="76" width="7" height="6" rx="1"/>
+              <rect x="66" y="74" width="7" height="6" rx="1"/><rect x="78" y="73" width="7" height="6" rx="1"/>
+              <rect x="90" y="72" width="7" height="6" rx="1"/><rect x="102" y="72" width="7" height="6" rx="1"/>
+              <rect x="114" y="73" width="7" height="6" rx="1"/><rect x="126" y="74" width="7" height="6" rx="1"/>
+              <rect x="138" y="76" width="7" height="6" rx="1"/><rect x="150" y="79" width="7" height="6" rx="1"/>
+
+              <rect x="24" y="99" width="7" height="6" rx="1"/><rect x="36" y="97" width="7" height="6" rx="1"/>
+              <rect x="48" y="95" width="7" height="6" rx="1"/><rect x="60" y="94" width="7" height="6" rx="1"/>
+              <rect x="72" y="93" width="7" height="6" rx="1"/><rect x="84" y="93" width="7" height="6" rx="1"/>
+              <rect x="96" y="93" width="7" height="6" rx="1"/><rect x="108" y="93" width="7" height="6" rx="1"/>
+              <rect x="120" y="93" width="7" height="6" rx="1"/><rect x="132" y="94" width="7" height="6" rx="1"/>
+              <rect x="144" y="95" width="7" height="6" rx="1"/><rect x="156" y="97" width="7" height="6" rx="1"/>
+              <rect x="168" y="99" width="7" height="6" rx="1"/>
+            </g>
           </svg>
           <div class="cap-card-num">45</div>
           <div class="cap-card-label">Meia Lua</div>
+          <div class="cap-card-desc">Cadeiras e mesas em formato de meia lua, perfeitas para visualização desimpedida de uma tela.</div>
         </div>
+
+        <!-- ESTAÇÕES 8 PAX -->
         <div class="cap-card">
-          <svg class="cap-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="3" y="3" width="7" height="7" rx="1"/>
-            <rect x="14" y="3" width="7" height="7" rx="1"/>
-            <rect x="3" y="14" width="7" height="7" rx="1"/>
-            <rect x="14" y="14" width="7" height="7" rx="1"/>
+          <svg class="cap-card-diagram" viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="4" width="192" height="122" rx="3" fill="#e8e0d0" stroke="#8a7a60" stroke-width="3"/>
+            <!-- 6 work tables 2x3 -->
+            <g fill="#c8b898" stroke="#8a7a60" stroke-width="1">
+              <rect x="20" y="20" width="50" height="30" rx="2"/><rect x="82" y="20" width="50" height="30" rx="2"/>
+              <rect x="144" y="20" width="50" height="30" rx="2"/>
+              <rect x="20" y="72" width="50" height="30" rx="2"/><rect x="82" y="72" width="50" height="30" rx="2"/>
+              <rect x="144" y="72" width="50" height="30" rx="2"/>
+            </g>
+            <!-- chairs around each table -->
+            <g fill="#a89878" stroke="none">
+              <!-- top tables chairs -->
+              <rect x="25" y="13" width="7" height="5" rx="1"/><rect x="36" y="13" width="7" height="5" rx="1"/>
+              <rect x="47" y="13" width="7" height="5" rx="1"/><rect x="58" y="13" width="7" height="5" rx="1"/>
+              <rect x="87" y="13" width="7" height="5" rx="1"/><rect x="98" y="13" width="7" height="5" rx="1"/>
+              <rect x="109" y="13" width="7" height="5" rx="1"/><rect x="120" y="13" width="7" height="5" rx="1"/>
+              <rect x="149" y="13" width="7" height="5" rx="1"/><rect x="160" y="13" width="7" height="5" rx="1"/>
+              <rect x="171" y="13" width="7" height="5" rx="1"/><rect x="182" y="13" width="7" height="5" rx="1"/>
+              <!-- bottom row -->
+              <rect x="25" y="52" width="7" height="5" rx="1"/><rect x="36" y="52" width="7" height="5" rx="1"/>
+              <rect x="47" y="52" width="7" height="5" rx="1"/><rect x="58" y="52" width="7" height="5" rx="1"/>
+              <rect x="87" y="52" width="7" height="5" rx="1"/><rect x="98" y="52" width="7" height="5" rx="1"/>
+              <rect x="109" y="52" width="7" height="5" rx="1"/><rect x="120" y="52" width="7" height="5" rx="1"/>
+              <rect x="149" y="52" width="7" height="5" rx="1"/><rect x="160" y="52" width="7" height="5" rx="1"/>
+              <rect x="171" y="52" width="7" height="5" rx="1"/><rect x="182" y="52" width="7" height="5" rx="1"/>
+              <!-- bottom tables -->
+              <rect x="25" y="104" width="7" height="5" rx="1"/><rect x="36" y="104" width="7" height="5" rx="1"/>
+              <rect x="47" y="104" width="7" height="5" rx="1"/><rect x="58" y="104" width="7" height="5" rx="1"/>
+              <rect x="87" y="104" width="7" height="5" rx="1"/><rect x="98" y="104" width="7" height="5" rx="1"/>
+              <rect x="109" y="104" width="7" height="5" rx="1"/><rect x="120" y="104" width="7" height="5" rx="1"/>
+              <rect x="149" y="104" width="7" height="5" rx="1"/><rect x="160" y="104" width="7" height="5" rx="1"/>
+              <rect x="171" y="104" width="7" height="5" rx="1"/><rect x="182" y="104" width="7" height="5" rx="1"/>
+            </g>
           </svg>
           <div class="cap-card-num">48</div>
           <div class="cap-card-label">Estações 8 pax</div>
+          <div class="cap-card-desc">Múltiplas mesas individuais de trabalho em grupo, cada uma acomodando 8 pessoas.</div>
         </div>
+
+      </div>
+
+      <!-- Row 2: 3 cards -->
+      <div class="cap-grid-bottom">
+
+        <!-- ESTAÇÕES 6 PAX -->
         <div class="cap-card">
-          <svg class="cap-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="3" y="3" width="7" height="7" rx="1"/>
-            <rect x="14" y="3" width="7" height="7" rx="1"/>
-            <rect x="8" y="14" width="7" height="7" rx="1"/>
+          <svg class="cap-card-diagram" viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="4" width="192" height="122" rx="3" fill="#e8e0d0" stroke="#8a7a60" stroke-width="3"/>
+            <!-- 6 tables 2x3 smaller -->
+            <g fill="#c8b898" stroke="#8a7a60" stroke-width="1">
+              <rect x="16" y="20" width="42" height="26" rx="2"/><rect x="72" y="20" width="42" height="26" rx="2"/>
+              <rect x="128" y="20" width="42" height="26" rx="2"/>
+              <rect x="28" y="64" width="42" height="26" rx="2"/><rect x="84" y="64" width="42" height="26" rx="2"/>
+              <rect x="140" y="64" width="42" height="26" rx="2"/>
+            </g>
+            <!-- chairs -->
+            <g fill="#a89878" stroke="none">
+              <rect x="22" y="13" width="7" height="5" rx="1"/><rect x="32" y="13" width="7" height="5" rx="1"/>
+              <rect x="44" y="13" width="7" height="5" rx="1"/>
+              <rect x="78" y="13" width="7" height="5" rx="1"/><rect x="88" y="13" width="7" height="5" rx="1"/>
+              <rect x="100" y="13" width="7" height="5" rx="1"/>
+              <rect x="134" y="13" width="7" height="5" rx="1"/><rect x="144" y="13" width="7" height="5" rx="1"/>
+              <rect x="156" y="13" width="7" height="5" rx="1"/>
+              <rect x="22" y="47" width="7" height="5" rx="1"/><rect x="32" y="47" width="7" height="5" rx="1"/>
+              <rect x="44" y="47" width="7" height="5" rx="1"/>
+              <rect x="78" y="47" width="7" height="5" rx="1"/><rect x="88" y="47" width="7" height="5" rx="1"/>
+              <rect x="100" y="47" width="7" height="5" rx="1"/>
+              <rect x="134" y="47" width="7" height="5" rx="1"/><rect x="144" y="47" width="7" height="5" rx="1"/>
+              <rect x="156" y="47" width="7" height="5" rx="1"/>
+              <rect x="34" y="57" width="7" height="5" rx="1"/><rect x="44" y="57" width="7" height="5" rx="1"/>
+              <rect x="54" y="57" width="7" height="5" rx="1"/>
+              <rect x="90" y="57" width="7" height="5" rx="1"/><rect x="100" y="57" width="7" height="5" rx="1"/>
+              <rect x="110" y="57" width="7" height="5" rx="1"/>
+              <rect x="146" y="57" width="7" height="5" rx="1"/><rect x="156" y="57" width="7" height="5" rx="1"/>
+              <rect x="166" y="57" width="7" height="5" rx="1"/>
+              <rect x="34" y="91" width="7" height="5" rx="1"/><rect x="44" y="91" width="7" height="5" rx="1"/>
+              <rect x="54" y="91" width="7" height="5" rx="1"/>
+              <rect x="90" y="91" width="7" height="5" rx="1"/><rect x="100" y="91" width="7" height="5" rx="1"/>
+              <rect x="110" y="91" width="7" height="5" rx="1"/>
+              <rect x="146" y="91" width="7" height="5" rx="1"/><rect x="156" y="91" width="7" height="5" rx="1"/>
+              <rect x="166" y="91" width="7" height="5" rx="1"/>
+            </g>
           </svg>
           <div class="cap-card-num">36</div>
           <div class="cap-card-label">Estações 6 pax</div>
+          <div class="cap-card-desc">Múltiplas mesas individuais de trabalho em grupo, cada uma acomodando 6 pessoas.</div>
         </div>
+
+        <!-- BANQUETE REDONDO -->
         <div class="cap-card">
-          <svg class="cap-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <circle cx="8" cy="8" r="4"/>
-            <circle cx="16" cy="8" r="4"/>
-            <circle cx="8" cy="16" r="4"/>
-            <circle cx="16" cy="16" r="4"/>
+          <svg class="cap-card-diagram" viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="4" width="192" height="122" rx="3" fill="#e8e0d0" stroke="#8a7a60" stroke-width="3"/>
+            <!-- 4 round tables -->
+            <g fill="#c8b898" stroke="#8a7a60" stroke-width="1.5">
+              <circle cx="55" cy="45" r="24"/><circle cx="145" cy="45" r="24"/>
+              <circle cx="55" cy="95" r="24"/><circle cx="145" cy="95" r="24"/>
+            </g>
+            <!-- chairs around each table -->
+            <g fill="#a89878" stroke="none">
+              <!-- top-left table -->
+              <rect x="48" y="16" width="7" height="7" rx="2"/><rect x="68" y="24" width="7" height="7" rx="2"/>
+              <rect x="74" y="42" width="7" height="7" rx="2"/><rect x="68" y="60" width="7" height="7" rx="2"/>
+              <rect x="48" y="67" width="7" height="7" rx="2"/><rect x="28" y="60" width="7" height="7" rx="2"/>
+              <rect x="22" y="42" width="7" height="7" rx="2"/><rect x="28" y="24" width="7" height="7" rx="2"/>
+              <!-- top-right table -->
+              <rect x="138" y="16" width="7" height="7" rx="2"/><rect x="158" y="24" width="7" height="7" rx="2"/>
+              <rect x="164" y="42" width="7" height="7" rx="2"/><rect x="158" y="60" width="7" height="7" rx="2"/>
+              <rect x="138" y="67" width="7" height="7" rx="2"/><rect x="118" y="60" width="7" height="7" rx="2"/>
+              <rect x="112" y="42" width="7" height="7" rx="2"/><rect x="118" y="24" width="7" height="7" rx="2"/>
+              <!-- bottom-left table -->
+              <rect x="48" y="66" width="7" height="7" rx="2"/><rect x="68" y="74" width="7" height="7" rx="2"/>
+              <rect x="74" y="92" width="7" height="7" rx="2"/><rect x="68" y="110" width="7" height="7" rx="2"/>
+              <rect x="48" y="116" width="7" height="7" rx="2"/><rect x="28" y="110" width="7" height="7" rx="2"/>
+              <rect x="22" y="92" width="7" height="7" rx="2"/><rect x="28" y="74" width="7" height="7" rx="2"/>
+              <!-- bottom-right table -->
+              <rect x="138" y="66" width="7" height="7" rx="2"/><rect x="158" y="74" width="7" height="7" rx="2"/>
+              <rect x="164" y="92" width="7" height="7" rx="2"/><rect x="158" y="110" width="7" height="7" rx="2"/>
+              <rect x="138" y="116" width="7" height="7" rx="2"/><rect x="118" y="110" width="7" height="7" rx="2"/>
+              <rect x="112" y="92" width="7" height="7" rx="2"/><rect x="118" y="74" width="7" height="7" rx="2"/>
+            </g>
           </svg>
           <div class="cap-card-num">60</div>
           <div class="cap-card-label">Banquete Redondo</div>
+          <div class="cap-card-desc">Mesas redondas para refeições formais ou discussões colaborativas, com foco na interação.</div>
         </div>
+
+        <!-- BANQUETE ÚNICO -->
         <div class="cap-card">
-          <svg class="cap-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="4" y="8" width="16" height="8" rx="1"/>
+          <svg class="cap-card-diagram" viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="4" width="192" height="122" rx="3" fill="#e8e0d0" stroke="#8a7a60" stroke-width="3"/>
+            <!-- single long table -->
+            <rect x="20" y="52" width="160" height="26" rx="2" fill="#c8b898" stroke="#8a7a60" stroke-width="1.5"/>
+            <!-- chairs top -->
+            <g fill="#a89878" stroke="none">
+              <rect x="24" y="43" width="9" height="7" rx="2"/><rect x="38" y="43" width="9" height="7" rx="2"/>
+              <rect x="52" y="43" width="9" height="7" rx="2"/><rect x="66" y="43" width="9" height="7" rx="2"/>
+              <rect x="80" y="43" width="9" height="7" rx="2"/><rect x="94" y="43" width="9" height="7" rx="2"/>
+              <rect x="108" y="43" width="9" height="7" rx="2"/><rect x="122" y="43" width="9" height="7" rx="2"/>
+              <rect x="136" y="43" width="9" height="7" rx="2"/><rect x="150" y="43" width="9" height="7" rx="2"/>
+              <rect x="164" y="43" width="9" height="7" rx="2"/>
+              <!-- chairs bottom -->
+              <rect x="24" y="80" width="9" height="7" rx="2"/><rect x="38" y="80" width="9" height="7" rx="2"/>
+              <rect x="52" y="80" width="9" height="7" rx="2"/><rect x="66" y="80" width="9" height="7" rx="2"/>
+              <rect x="80" y="80" width="9" height="7" rx="2"/><rect x="94" y="80" width="9" height="7" rx="2"/>
+              <rect x="108" y="80" width="9" height="7" rx="2"/><rect x="122" y="80" width="9" height="7" rx="2"/>
+              <rect x="136" y="80" width="9" height="7" rx="2"/><rect x="150" y="80" width="9" height="7" rx="2"/>
+              <rect x="164" y="80" width="9" height="7" rx="2"/>
+            </g>
+            <!-- head seats -->
+            <rect x="10" y="58" width="8" height="9" rx="2" fill="#a89878"/>
+            <rect x="182" y="58" width="8" height="9" rx="2" fill="#a89878"/>
           </svg>
           <div class="cap-card-num">48</div>
           <div class="cap-card-label">Banquete Único</div>
+          <div class="cap-card-desc">Uma única mesa longa e centralizada para refeições em família ou reuniões executivas.</div>
         </div>
+
       </div>
     </div>
 
