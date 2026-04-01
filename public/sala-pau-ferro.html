@@ -38,22 +38,26 @@
   /* CAPACIDADES */
   .cap-section{margin-bottom:64px}
   .cap-title{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--sage);font-weight:700;margin-bottom:32px}
-  .cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-  .cap-grid-bottom{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:20px}
-  .cap-card{background:var(--cream-dark);border:1px solid var(--sand-light);padding:24px 20px 20px;text-align:center;transition:all .3s ease}
-  .cap-card:hover{border-color:var(--sage);transform:translateY(-3px);box-shadow:0 10px 28px rgba(28,43,32,.1)}
-  .cap-card-diagram{width:100%;height:130px;display:block;margin-bottom:16px}
-  .cap-card-num{font-family:'Cormorant Garamond',serif;font-size:56px;color:var(--forest);line-height:1;margin-bottom:2px}
-  .cap-card-label{font-size:9.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--text-light);font-weight:700;margin-bottom:10px}
-  .cap-card-desc{font-size:12px;color:var(--text-light);line-height:1.6;font-weight:300;max-width:220px;margin:0 auto}
+  .cap-grid-wrapper{overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:16px;margin:0 -24px;padding-left:24px;padding-right:24px}
+  .cap-grid{display:flex;flex-direction:row;gap:0;min-width:max-content}
+  .cap-grid-bottom{display:none}
+  .cap-card{background:var(--cream-dark);border-right:1px solid var(--sand-light);border-top:1px solid var(--sand-light);border-bottom:1px solid var(--sand-light);padding:28px 20px 24px;text-align:center;transition:all .3s ease;width:170px;flex-shrink:0;display:flex;flex-direction:column;align-items:center}
+  .cap-card:first-child{border-left:1px solid var(--sand-light)}
+  .cap-card:hover{border-color:var(--sage);background:var(--cream)}
+  .cap-card-diagram{width:100%;height:110px;display:block;margin-bottom:20px;flex-shrink:0}
+  .cap-card-num{font-family:'Cormorant Garamond',serif;font-size:64px;color:var(--forest);line-height:1;margin-bottom:4px}
+  .cap-card-label{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);font-weight:700;margin-bottom:12px;line-height:1.4}
+  .cap-card-desc{font-size:11.5px;color:var(--text-light);line-height:1.65;font-weight:300;width:100%}
 
   /* GALERIA */
   .gallery-section{margin-top:64px}
-  .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-  .gallery-item{aspect-ratio:4/3;overflow:hidden;position:relative}
-  .gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+  .gallery-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .gallery-col{display:flex;flex-direction:column;gap:12px}
+  .gallery-col .gallery-item{flex:1;min-height:0}
+  .gallery-col .gallery-item img{height:100%;min-height:220px}
+  .gallery-item{overflow:hidden;position:relative}
+  .gallery-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
   .gallery-item:hover img{transform:scale(1.05)}
-  .gallery-item.large{grid-column:span 2;grid-row:span 2;aspect-ratio:auto}
   .gallery-placeholder{background:linear-gradient(135deg,var(--forest-mid),var(--sage));display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;text-align:center;padding:20px}
 
   /* CTA CONTATO */
@@ -76,8 +80,10 @@
     .page-content{padding:48px 24px 64px}
     .gallery-grid{grid-template-columns:1fr 1fr}
     .gallery-item.large{grid-column:span 2}
-    .cap-grid,.cap-grid-bottom{grid-template-columns:repeat(2,1fr)}
-    .cap-card-diagram{height:100px}
+    .cap-card{width:140px}
+    .cap-card-diagram{height:90px}
+    .cap-card-num{font-size:48px}
+    .cap-card-desc{font-size:10.5px}
     footer{flex-direction:column;gap:16px;text-align:center;padding:24px}
   }
 </style>
@@ -92,7 +98,7 @@
 
 <!-- HERO -->
 <section class="page-hero">
-  <div class="page-hero-bg" style="background-image:url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/sala-pf-escolar.jpg-O1I0AuHtc4o9Feb1tKKqP63lOLPkrb.webp')"></div>
+  <div class="page-hero-bg" style="background-image:url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/capa%20pau%20ferro-OQMB5uB8f8sXtWdsgzpK84JAsDd5Ks.jpg')"></div>
   <div class="page-hero-overlay"></div>
   <div class="page-hero-content">
     <p class="eyebrow">Complexo Pau-Ferro</p>
@@ -113,7 +119,7 @@
     <div class="cap-section">
       <h3 class="cap-title">Capacidades por Configuração</h3>
 
-      <!-- Row 1: 3 cards -->
+      <div class="cap-grid-wrapper">
       <div class="cap-grid">
 
         <!-- ESCOLAR -->
@@ -151,7 +157,7 @@
           </svg>
           <div class="cap-card-num">48</div>
           <div class="cap-card-label">Escolar</div>
-          <div class="cap-card-desc">Fileiras de cadeiras e mesas otimizadas para palestras e aulas de alta densidade.</div>
+          <div class="cap-card-desc">Fileiras compactas de cadeiras e mesas, otimizadas para palestras e aulas.</div>
         </div>
 
         <!-- AUDITÓRIO -->
@@ -256,8 +262,8 @@
             </g>
           </svg>
           <div class="cap-card-num">28</div>
-          <div class="cap-card-label">Formato U</div>
-          <div class="cap-card-desc">Mesas em U, proporcionando visibilidade entre os participantes e um facilitador central.</div>
+          <div class="cap-card-label">U</div>
+          <div class="cap-card-desc">Mesas em forma de U, proporcionando visibilidade entre os participantes e um facilitador central.</div>
         </div>
 
         <!-- MEIA LUA -->
@@ -298,8 +304,8 @@
             </g>
           </svg>
           <div class="cap-card-num">45</div>
-          <div class="cap-card-label">Meia Lua</div>
-          <div class="cap-card-desc">Cadeiras e mesas em formato de meia lua, perfeitas para visualização desimpedida de uma tela.</div>
+          <div class="cap-card-label">Meia Lua (mesas redondas)</div>
+          <div class="cap-card-desc">Múltiplas mesas redondas em formato de meia lua, perfeitas para jantares ou almoços com vista para uma tela ou palco.</div>
         </div>
 
         <!-- ESTAÇÕES 8 PAX -->
@@ -339,14 +345,10 @@
             </g>
           </svg>
           <div class="cap-card-num">48</div>
-          <div class="cap-card-label">Estações 8 pax</div>
-          <div class="cap-card-desc">Múltiplas mesas individuais de trabalho em grupo, cada uma acomodando 8 pessoas.</div>
+          <div class="cap-card-label">Estações Dinâmicas 8 Pessoas</div>
+          <div class="cap-card-desc">Múltiplas mesas de trabalho em grupo dinâmico, cada uma acomodando 8 pessoas.</div>
         </div>
 
-      </div>
-
-      <!-- Row 2: 3 cards -->
-      <div class="cap-grid-bottom">
 
         <!-- ESTAÇÕES 6 PAX -->
         <div class="cap-card">
@@ -388,8 +390,8 @@
             </g>
           </svg>
           <div class="cap-card-num">36</div>
-          <div class="cap-card-label">Estações 6 pax</div>
-          <div class="cap-card-desc">Múltiplas mesas individuais de trabalho em grupo, cada uma acomodando 6 pessoas.</div>
+          <div class="cap-card-label">Estações Dinâmicas 6 Pessoas</div>
+          <div class="cap-card-desc">Múltiplas mesas de trabalho em grupo dinâmico, cada uma acomodando 6 pessoas.</div>
         </div>
 
         <!-- BANQUETE REDONDO -->
@@ -426,8 +428,8 @@
             </g>
           </svg>
           <div class="cap-card-num">60</div>
-          <div class="cap-card-label">Banquete Redondo</div>
-          <div class="cap-card-desc">Mesas redondas para refeições formais ou discussões colaborativas, com foco na interação.</div>
+          <div class="cap-card-label">Banquete Mesas Redondas Jantar ou Almoço</div>
+          <div class="cap-card-desc">Mesas redondas para refeições formais (jantar ou almoço) ou discussões colaborativas.</div>
         </div>
 
         <!-- BANQUETE ÚNICO -->
@@ -457,30 +459,49 @@
             <rect x="182" y="58" width="8" height="9" rx="2" fill="#a89878"/>
           </svg>
           <div class="cap-card-num">48</div>
-          <div class="cap-card-label">Banquete Único</div>
-          <div class="cap-card-desc">Uma única mesa longa e centralizada para refeições em família ou reuniões executivas.</div>
+          <div class="cap-card-label">Banquete Mesas Únicas Jantar ou Almoço</div>
+          <div class="cap-card-desc">Uma única mesa longa e centralizada para refeições em família (jantar ou almoço) ou reuniões executivas.</div>
         </div>
 
-      </div>
-    </div>
+      </div><!-- end cap-grid -->
+      </div><!-- end cap-grid-wrapper -->
+    </div><!-- end cap-section -->
 
     <div class="gallery-section">
       <h3 class="cap-title">Galeria de Fotos</h3>
       <div class="gallery-grid">
-        <div class="gallery-item large">
-          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/sala-pf-escolar.jpg-O1I0AuHtc4o9Feb1tKKqP63lOLPkrb.webp" alt="Sala Pau-Ferro - Escolar">
+        <!-- Coluna esquerda: 3 itens -->
+        <div class="gallery-col">
+          <div class="gallery-item">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1000658039-8oqHdOjMCQZKqeAbnkaveOwwVCLf9h.jpg" alt="Jardim Pau-Ferro - área de refeições com buffet">
+          </div>
+          <div class="gallery-item">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-02-12%20at%2010.29.20-hYLbYVatqlDfjzEj4oHLwxhcsDKETG.jpeg" alt="Jardim Pau-Ferro - pergola com vegetação">
+          </div>
+          <div class="gallery-item">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1000471407_ed57ed3ee8782d0c17a55faac5428465-15_10_2025%2C%2010_05_37-S2dAmnBoddq4TTZgum4Imwq3JGhj2N.jpg" alt="Sala Pau-Ferro - configuração escolar com material">
+          </div>
         </div>
-        <div class="gallery-item">
-          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/sala-pf-rounds.jpg-GWLIHNadkQiQIDVLWML8QemKcUa3gg.webp" alt="Sala Pau-Ferro - Rounds">
-        </div>
-        <div class="gallery-item">
-          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/sala-pf-lounge-5E5CoLeM1hcvflslwrR4tp79xh4izZ.jpg" alt="Sala Pau-Ferro - Lounge">
-        </div>
-        <div class="gallery-item">
-          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/jardim-pf.jpg-CXc2gMZrWxj3X1iz6bOdLqBsbWzVRc.webp" alt="Jardim Pau-Ferro">
-        </div>
-        <div class="gallery-item">
-          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-02-12%20at%2010.09.43-tBdOS2MrcTJr4Aqk9BwjPWKW6zZFAC.jpeg" alt="Área de refeições">
+        <!-- Coluna direita: 5 itens -->
+        <div class="gallery-col">
+          <div class="gallery-item">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1000658037%20%281%29-BG8Pbjm0XgpeM0K2HLi8tjnNGlkq6u.jpg" alt="Jardim Pau-Ferro - cobertura verde com mesas">
+          </div>
+          <div class="gallery-item">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1000324589_9a3f9e8b56a96f8849c42acdd0b24f1a-28_03_2025%2C%2008_48_12-J5TnnLnQr00vrlYOjCMHtQTpUwyeMp.jpg" alt="Jardim Pau-Ferro - vista externa">
+          </div>
+          <div class="gallery-item">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/C%C3%B3pia%20de%20Design%20sem%20nome_20250328_160842_0000-6MwORkKJafpXlrOrothzuaEU0ViSQ7.png" alt="Jardim Pau-Ferro - vista aérea com flores azuis">
+          </div>
+          <div class="gallery-item">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/PAU%20FERRO%20U-G0ylCQq87DVjEmFgKqCuG7yLmkrq98.jpg" alt="Sala Pau-Ferro - configuração em U e escolar">
+          </div>
+          <div class="gallery-item">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/PAU%20FERRO%20MEIA%20LUA-GI0jMDyMVv6eZqga9wCe9TSX6lq7vW.jpg" alt="Sala Pau-Ferro - configuração meia lua com mesas redondas">
+          </div>
+          <div class="gallery-item">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/PAU%20FERRO%20ESCOLAR-ogJlN2e8nf3n6J3ChX4tBJJWix1frf.jpg" alt="Sala Pau-Ferro - configuração escolar com projeção">
+          </div>
         </div>
       </div>
     </div>
