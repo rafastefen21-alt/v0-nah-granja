@@ -94,8 +94,11 @@
   .planta-section .intro{font-size:15px;color:var(--text-light);font-weight:300;line-height:1.7;margin-bottom:48px;max-width:600px;margin-left:auto;margin-right:auto}
   .planta-container{position:relative;display:inline-block;max-width:100%;perspective:1500px}
   .planta-container img.planta-base{width:100%;height:auto;display:block;transition:transform .6s ease}
-  .planta-hotspot{position:absolute;inset:0;cursor:pointer;text-decoration:none;display:block}
-  .planta-hotspot img.planta-overlay{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .3s ease;display:block}
+  .planta-hotspot{position:absolute;top:0;bottom:0;cursor:pointer;text-decoration:none;display:block}
+  .planta-hotspot.hotspot-ferro{left:0;width:50%}
+  .planta-hotspot.hotspot-pit{left:50%;width:50%}
+  .planta-hotspot img.planta-overlay{position:absolute;left:0;top:0;width:200%;height:100%;object-fit:cover;opacity:0;transition:opacity .3s ease;display:block;pointer-events:none}
+  .planta-hotspot.hotspot-pit img.planta-overlay{left:-100%}
   .planta-hotspot:hover img.planta-overlay{opacity:1}
   /* Transição 3D ao clicar */
   .planta-container.zoom-in{animation:zoomInto .8s ease-out forwards}
@@ -384,12 +387,12 @@
     <p class="intro reveal">Passe o mouse sobre as áreas da planta para descobrir cada ambiente do Nah Granja.</p>
     <div class="planta-container reveal" id="plantaContainer">
       <img class="planta-base" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-KO13YhAaY3EWvDJXAiRQ4XMxjf3FLN.png" alt="Planta Nah Granja">
-      <!-- Complexo Pau-Ferro hover overlay -->
-      <a href="sala-pau-ferro.html" class="planta-hotspot" onclick="navigateWithZoom(event, 'sala-pau-ferro.html')">
+      <!-- Complexo Pau-Ferro hover overlay (left half trigger) -->
+      <a href="sala-pau-ferro.html" class="planta-hotspot hotspot-ferro" onclick="navigateWithZoom(event, 'sala-pau-ferro.html')">
         <img class="planta-overlay" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/complexo%20ferro.png-d2u7GpJL4q4D7QWJhD3RZNDYa6KzTk.jpeg" alt="Complexo Pau-Ferro — Clique e conheça">
       </a>
-      <!-- Complexo Pitangueiras hover overlay -->
-      <a href="sala-pitangueiras.html" class="planta-hotspot" onclick="navigateWithZoom(event, 'sala-pitangueiras.html')">
+      <!-- Complexo Pitangueiras hover overlay (right half trigger) -->
+      <a href="sala-pitangueiras.html" class="planta-hotspot hotspot-pit" onclick="navigateWithZoom(event, 'sala-pitangueiras.html')">
         <img class="planta-overlay" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/complexo%20pt.png-s7ICXPnTStroaAtKYwBlrFIynVDpt7.jpeg" alt="Complexo Pitangueiras — Clique e conheça">
       </a>
     </div>
