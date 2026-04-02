@@ -42,9 +42,9 @@
   .hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;animation:slowzoom 18s ease-in-out infinite alternate}
   @keyframes slowzoom{from{transform:scale(1)}to{transform:scale(1.06)}}
   .hero-content{position:relative;text-align:center;color:#fff;padding:0 24px;animation:fadeUp 1.1s ease both;z-index:2}
-  .hero-eyebrow{display:inline-block;font-size:10.5px;letter-spacing:5px;text-transform:uppercase;color:#fff;font-weight:600;margin-bottom:8px;border:1px solid rgba(255,255,255,.5);padding:6px 18px;background:rgba(0,0,0,.25);backdrop-filter:blur(4px)}
+  .hero-eyebrow{display:inline-block;font-size:10.5px;letter-spacing:5px;text-transform:uppercase;color:#fff;font-weight:600;margin-bottom:8px;margin-top:32px;border:1px solid rgba(255,255,255,.5);padding:6px 18px;background:rgba(0,0,0,.25);backdrop-filter:blur(4px)}
   .hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(70px,11vw,136px);font-weight:300;font-style:italic;line-height:.9;letter-spacing:-2px;margin-top:-5px;margin-bottom:-5px;text-shadow:0 4px 32px rgba(0,0,0,.25)}
-  .hero-tagline{font-size:13px;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.75);font-weight:300;margin-top:0;margin-bottom:18px}
+  .hero-tagline{font-size:13px;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.75);font-weight:300;margin-top:-48px;margin-bottom:18px}
   .hero-btn{display:inline-flex;align-items:center;gap:10px;background:var(--sand);color:var(--forest);text-decoration:none;padding:16px 42px;margin-bottom:0;font-size:10.5px;letter-spacing:3px;text-transform:uppercase;font-weight:700;transition:all .3s}
   .hero-btn:hover{background:#fff;transform:translateY(-3px);box-shadow:0 14px 40px rgba(0,0,0,.35)}
   .hero-scroll{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,.5);font-size:9px;letter-spacing:3px;text-transform:uppercase;animation:scrollpulse 2.5s ease-in-out infinite;z-index:2}
@@ -187,7 +187,6 @@
   .gastro-photos{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:260px 260px;gap:12px}
   .gastro-photos img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
   .gastro-photos img:hover{transform:scale(1.03)}
-  .gastro-photos img:first-child{grid-column:1/-1;height:260px}
 
   /* CTA */
   .cta-block{background:var(--forest);padding:130px 80px;text-align:center;position:relative;overflow:hidden}
@@ -283,7 +282,6 @@
     .gastro{padding:60px 24px}
     .gastro-hd{grid-template-columns:1fr;gap:40px}
     .gastro-photos{grid-template-columns:1fr;grid-template-rows:auto}
-    .gastro-photos img:first-child{grid-column:1}
 
     .cta-block{padding:80px 24px}
     .cta-btns{flex-direction:column;align-items:center}
@@ -601,14 +599,12 @@ A conexão com a natureza — a fauna, a flora, a luz e o ar — não é um luxo
           </div>
         </div>
       </div>
-      <div class="gastro-photos reveal">
-        <!-- ★ foto 15 — café da manhã colorido e farto -->
-        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/cafe-manha.jpg-ZRGhJXlFt5iMzSalCmhTsE7a3rbi5h.webp" alt="Café da manhã Nah Granja"
-          onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'ph',style:'grid-column:1/-1;height:260px',innerHTML:'<span>★ Foto 15 — Café da manhã</span>'}))">
-        <!-- ★ foto 14 — buffet de almoço com carne e legumes -->
-<img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/almoco.jpg-319yF0CkHMer9BfNHsElQUOwKWT4nH.webp" alt="Almoço Nah Granja"
-  onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'ph',style:'height:260px',innerHTML:'<span>★ Foto 14 — Almoço buffet</span>'}))">
-      </div>
+<div class="gastro-photos reveal">
+  <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1000317044_774bf06f1e239e5d637fd9992e1d1a01-17_02_2025%2C%2008_43_20-wK19jrscRh4kJrP8mGeY0ewVF6JxlA.jpg" alt="Pratos quentes Nah Granja">
+  <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1000471403_a43ed5c1a599e80b365d848e1143231d-15_10_2025%2C%2010_03_07-djGcKNnJoHTjcy4787Pc10Wtc4D5g3.jpg" alt="Mesa de brunch Nah Granja">
+  <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/20260304_123708-EoBMe84SNC9JSSDBmBY3iaeUYoWbUV.jpg" alt="Buffet completo Nah Granja">
+  <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1000341203_46cdac569ee5886e000ca2730e23ecaa-23_04_2025%2C%2010_27_05-lqemqekjbjq1dLMu5YFa5QRzNfvrDZ.png" alt="Café da manhã Nah Granja">
+  </div>
     </div>
   </div>
 </section>
