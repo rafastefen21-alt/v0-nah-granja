@@ -42,9 +42,9 @@
   .hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;animation:slowzoom 18s ease-in-out infinite alternate}
   @keyframes slowzoom{from{transform:scale(1)}to{transform:scale(1.06)}}
   .hero-content{position:relative;text-align:center;color:#fff;padding:0 24px;animation:fadeUp 1.1s ease both;z-index:2}
-  .hero-eyebrow{display:inline-block;font-size:10.5px;letter-spacing:5px;text-transform:uppercase;color:#fff;font-weight:600;margin-bottom:22px;border:1px solid rgba(255,255,255,.5);padding:6px 18px;background:rgba(0,0,0,.25);backdrop-filter:blur(4px)}
+  .hero-eyebrow{display:inline-block;font-size:10.5px;letter-spacing:5px;text-transform:uppercase;color:#fff;font-weight:600;margin-bottom:10px;border:1px solid rgba(255,255,255,.5);padding:6px 18px;background:rgba(0,0,0,.25);backdrop-filter:blur(4px)}
   .hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(70px,11vw,136px);font-weight:300;font-style:italic;line-height:.9;letter-spacing:-2px;margin-bottom:28px;text-shadow:0 4px 32px rgba(0,0,0,.25)}
-  .hero-tagline{font-size:13px;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.75);font-weight:300;margin-bottom:52px}
+  .hero-tagline{font-size:13px;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.75);font-weight:300;margin-bottom:20px}
   .hero-btn{display:inline-flex;align-items:center;gap:10px;background:var(--sand);color:var(--forest);text-decoration:none;padding:16px 42px;font-size:10.5px;letter-spacing:3px;text-transform:uppercase;font-weight:700;transition:all .3s}
   .hero-btn:hover{background:#fff;transform:translateY(-3px);box-shadow:0 14px 40px rgba(0,0,0,.35)}
   .hero-scroll{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,.5);font-size:9px;letter-spacing:3px;text-transform:uppercase;animation:scrollpulse 2.5s ease-in-out infinite;z-index:2}
@@ -301,7 +301,7 @@
 
 <!-- NAV -->
 <nav id="nav">
-  <a href="#" class="nav-logo">Nah Granja</a>
+  <a href="#" class="nav-logo"><img src="/logo-branco.png" alt="Nah Granja" style="height:40px;width:auto;"></a>
   <ul class="nav-links">
     <li><a href="#espacos">Espaços</a></li>
     <li><a href="#jardins">Jardins</a></li>
@@ -348,7 +348,7 @@
   </div>
   <div class="hero-content">
     <p class="hero-eyebrow">Granja Julieta · São Paulo</p>
-    <h1 class="hero-title">Nah Granja</h1>
+    <h1 class="hero-title"><img src="/logo-branco.png" alt="Nah Granja" style="height:clamp(80px,35vw,380px);width:auto;margin-bottom:8px;"></h1>
     <p class="hero-tagline">Espaço para Eventos Corporativos</p>
     <a href="https://wa.me/5511940439119" class="hero-btn">Solicite um Orçamento</a>
   </div>
@@ -429,12 +429,15 @@
       <p>Espaço luminoso e versátil com grandes janelas de vidro que integram o jardim ao salão. O pé direito alto garante projeção impecável e a climatização eficiente mantém o conforto sem abrir mão da sensação de estar em contato com a natureza.</p>
       <p style="font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-light);font-weight:700;margin-bottom:10px;margin-top:4px;">Capacidade por formato</p>
       <div class="cap-grid">
-        <div class="cap-item"><div class="cap-n">40</div><div class="cap-l">Escolar</div></div>
-        <div class="cap-item"><div class="cap-n">50</div><div class="cap-l">Auditório</div></div>
-        <div class="cap-item"><div class="cap-n">80</div><div class="cap-l">Coquetel</div></div>
-        <div class="cap-item"><div class="cap-n">30</div><div class="cap-l">Formato U</div></div>
-        <div class="cap-item"><div class="cap-n">40</div><div class="cap-l">Team Building</div></div>
-        <div class="cap-item"><div class="cap-n">36</div><div class="cap-l">Almoço / Jantar</div></div>
+        <div class="cap-item"><div class="cap-n">48</div><div class="cap-l">Escolar</div></div>
+        <div class="cap-item"><div class="cap-n">80</div><div class="cap-l">Auditório</div></div>
+        <div class="cap-item"><div class="cap-n">100</div><div class="cap-l">Coquetel</div></div>
+        <div class="cap-item"><div class="cap-n">28</div><div class="cap-l">Formato U</div></div>
+        <div class="cap-item"><div class="cap-n">45</div><div class="cap-l">Meia Lua</div></div>
+        <div class="cap-item"><div class="cap-n">48</div><div class="cap-l">Estações 8p</div></div>
+        <div class="cap-item"><div class="cap-n">36</div><div class="cap-l">Estações 6p</div></div>
+        <div class="cap-item"><div class="cap-n">60</div><div class="cap-l">Banquete Redondo</div></div>
+        <div class="cap-item"><div class="cap-n">48</div><div class="cap-l">Banquete Único</div></div>
       </div>
     </div>
   </div>
@@ -501,12 +504,11 @@
       <p>Ambiente acolhedor e intimista com paredes de tijolinho aparente, piso de taco e vista para o Jardim Pitangueiras — onde os saguis costumam aparecer. Ideal para pequenos grupos, sessões paralelas ou como sala de breakout da Pau-Ferro.</p>
       <p style="font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.45);font-weight:700;margin-bottom:10px;margin-top:4px;">Capacidade por formato</p>
       <div class="cap-grid">
-        <div class="cap-item"><div class="cap-n">16</div><div class="cap-l">Formato U</div></div>
+        <div class="cap-item"><div class="cap-n">18</div><div class="cap-l">Formato U</div></div>
         <div class="cap-item"><div class="cap-n">20</div><div class="cap-l">Escolar</div></div>
-        <div class="cap-item"><div class="cap-n">30</div><div class="cap-l">Auditório</div></div>
-        <div class="cap-item"><div class="cap-n">40</div><div class="cap-l">Coquetel</div></div>
-        <div class="cap-item"><div class="cap-n">24</div><div class="cap-l">Almoço / Jantar</div></div>
-        <div class="cap-item"><div class="cap-n">18</div><div class="cap-l">Círculo</div></div>
+        <div class="cap-item"><div class="cap-n">15</div><div class="cap-l">Meia Lua</div></div>
+        <div class="cap-item"><div class="cap-n">20</div><div class="cap-l">Poltronas</div></div>
+        <div class="cap-item"><div class="cap-n">35</div><div class="cap-l">Auditório</div></div>
       </div>
     </div>
   <div class="sala-dark-img" id="pitCrossfade">
@@ -671,7 +673,7 @@
 
 <!-- FOOTER -->
 <footer>
-  <span class="f-logo">Nah Granja</span>
+  <span class="f-logo"><img src="/logo-branco.png" alt="Nah Granja" style="height:28px;width:auto;opacity:.5;"></span>
   <span class="f-copy">© 2025 Nah Granja · Todos os direitos reservados</span>
   <a href="https://instagram.com/nahgranja" target="_blank">Instagram</a>
 </footer>
