@@ -78,14 +78,10 @@
 
   /* SOBRE */
   .sobre{background:var(--white);padding:110px 80px}
-  .sobre-grid{display:grid;grid-template-columns:1fr 1fr;gap:88px;max-width:1180px;margin:0 auto;align-items:center}
-  .sobre-img-wrap{position:relative}
-  .sobre-img-wrap img{width:100%;height:520px;object-fit:cover;display:block}
-  .sobre-img-wrap iframe{width:100%;height:520px;display:block}
-  .sobre-img-wrap::after{content:'';position:absolute;bottom:-18px;right:-18px;width:55%;height:55%;border:1px solid var(--sand-light);z-index:-1}
-  .sobre-text p{font-size:16.5px;line-height:1.88;color:var(--text-light);font-weight:300;margin-bottom:18px}
-  .tags-wrap{display:flex;flex-wrap:wrap;gap:9px;margin-top:28px}
-  .tag{border:1px solid var(--sand-light);padding:8px 15px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);font-weight:500;cursor:default;transition:all .2s}
+  .sobre-container{max-width:1000px;margin:0 auto;text-align:center}
+  .sobre-titulo{font-family:var(--font-display);font-size:clamp(28px,4vw,42px);font-weight:300;color:var(--text);margin-bottom:48px;letter-spacing:-0.5px}
+  .sobre-video-wrap{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:4px;box-shadow:0 20px 60px rgba(0,0,0,.1)}
+  
   .tag:hover{background:var(--forest);color:var(--sand);border-color:var(--forest)}
 
   /* PLANTA INTERATIVA */
@@ -256,10 +252,7 @@
     .hero-eyebrow{margin-bottom:16px}
 
     .sobre{padding:60px 24px}
-    .sobre-grid{grid-template-columns:1fr;gap:40px}
-    .sobre-img-wrap img{height:320px}
-    .sobre-img-wrap iframe{height:280px}
-    .sobre-img-wrap::after{display:none}
+    .sobre-titulo{font-size:24px;margin-bottom:32px}
 
   .planta-section{padding:60px 24px}
 
@@ -362,30 +355,17 @@
 
 <!-- ══ SOBRE ══ -->
 <section class="sobre" id="sobre">
-  <div class="sobre-grid">
-    <div class="sobre-img-wrap reveal">
-      <!-- Video institucional -->
-      <iframe 
-        src="https://drive.google.com/file/d/1Ax5ke_QkZaFAxj2cyH5KT5YXRpczvnRn/preview" 
-        width="100%" 
-        height="520" 
-        style="border:none;display:block;"
-        allow="autoplay; encrypted-media" 
-        allowfullscreen>
-      </iframe>
-    </div>
-    <div class="reveal">
-      <p class="eyebrow">O Espaço</p>
-      <h2 class="heading">Onde grandes ideias encontram o ambiente certo</h2>
-      <div class="rule"></div>
-      <p>A poucos minutos do centro de São Paulo, o Nah Granja é um refúgio verde para eventos corporativos que exigem mais do que quatro paredes — exigem presença, foco e conexão genuína.</p>
-      <p>Dois salões versáteis, jardins exuberantes e gastronomia personalizada para transformar seu próximo evento em uma experiência memorável.</p>
-      <div class="tags-wrap">
-        <span class="tag">Reuniões</span><span class="tag">Treinamentos</span>
-        <span class="tag">Team Building</span><span class="tag">Confraternizações</span>
-        <span class="tag">Workshops</span><span class="tag">Prod. Fotográfica</span>
-        <span class="tag">Desfiles</span><span class="tag">Lançamentos</span>
-      </div>
+  <div class="sobre-container reveal">
+    <h2 class="sobre-titulo">Onde grandes ideias encontram o ambiente certo</h2>
+    <div class="sobre-video-wrap">
+      <video 
+        src="https://drive.google.com/uc?export=download&id=1Ax5ke_QkZaFAxj2cyH5KT5YXRpczvnRn"
+        autoplay
+        muted
+        loop
+        playsinline
+        style="width:100%;height:100%;object-fit:cover;display:block;">
+      </video>
     </div>
   </div>
 </section>
