@@ -81,6 +81,7 @@
   .sobre-grid{display:grid;grid-template-columns:1fr 1fr;gap:88px;max-width:1180px;margin:0 auto;align-items:center}
   .sobre-img-wrap{position:relative}
   .sobre-img-wrap img{width:100%;height:520px;object-fit:cover;display:block}
+  .sobre-img-wrap iframe{width:100%;height:520px;display:block}
   .sobre-img-wrap::after{content:'';position:absolute;bottom:-18px;right:-18px;width:55%;height:55%;border:1px solid var(--sand-light);z-index:-1}
   .sobre-text p{font-size:16.5px;line-height:1.88;color:var(--text-light);font-weight:300;margin-bottom:18px}
   .tags-wrap{display:flex;flex-wrap:wrap;gap:9px;margin-top:28px}
@@ -257,6 +258,7 @@
     .sobre{padding:60px 24px}
     .sobre-grid{grid-template-columns:1fr;gap:40px}
     .sobre-img-wrap img{height:320px}
+    .sobre-img-wrap iframe{height:280px}
     .sobre-img-wrap::after{display:none}
 
   .planta-section{padding:60px 24px}
@@ -309,7 +311,6 @@
   <a href="#" class="nav-logo"><img src="/logo-branco.png" alt="Nah Granja" style="height:40px;width:auto;"></a>
   <ul class="nav-links">
     <li><a href="#espacos">Espaços</a></li>
-    <li><a href="#jardins">Jardins</a></li>
     <li><a href="#gastronomia">Gastronomia</a></li>
     <li><a href="#contato" class="nav-cta">Solicitar Orçamento</a></li>
   </ul>
@@ -323,7 +324,6 @@
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
   <a href="#espacos" onclick="closeMobileMenu()">Espaços</a>
-  <a href="#jardins" onclick="closeMobileMenu()">Jardins</a>
   <a href="#gastronomia" onclick="closeMobileMenu()">Gastronomia</a>
   <a href="#contato" class="nav-cta" onclick="closeMobileMenu()">Solicitar Orçamento</a>
 </div>
@@ -355,7 +355,7 @@
     <p class="hero-eyebrow">Granja Julieta · São Paulo</p>
     <h1 class="hero-title"><img src="/logo-branco.png" alt="Nah Granja" style="height:clamp(80px,35vw,380px);width:auto;margin-bottom:8px;"></h1>
     <p class="hero-tagline">Espaço para Eventos Especiais</p>
-    <a href="https://wa.me/5511940439119" class="hero-btn">Solicite um Orçamento</a>
+    <a href="#contato" class="hero-btn">Solicite um Orçamento</a>
   </div>
   <div class="hero-scroll">Scroll</div>
 </section>
@@ -364,9 +364,15 @@
 <section class="sobre" id="sobre">
   <div class="sobre-grid">
     <div class="sobre-img-wrap reveal">
-      <!-- ★ foto 1 — fachada com porta de madeira -->
-      <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/fachada-entrada-IKEvOmWuDClwI6HaM2aROfOrqO3YHU.jpg" alt="Entrada Nah Granja"
-        onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'ph',style:'height:520px',innerHTML:'<span>★ Foto 1 — Fachada com porta de madeira</span>'}))">
+      <!-- Video institucional -->
+      <iframe 
+        src="https://drive.google.com/file/d/1Ax5ke_QkZaFAxj2cyH5KT5YXRpczvnRn/preview" 
+        width="100%" 
+        height="520" 
+        style="border:none;display:block;"
+        allow="autoplay; encrypted-media" 
+        allowfullscreen>
+      </iframe>
     </div>
     <div class="reveal">
       <p class="eyebrow">O Espaço</p>
