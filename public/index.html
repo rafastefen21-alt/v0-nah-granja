@@ -589,7 +589,7 @@ A conexão com a natureza — a fauna, a flora, a luz e o ar — não é um luxo
   <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1000317044_774bf06f1e239e5d637fd9992e1d1a01-17_02_2025%2C%2008_43_20-wK19jrscRh4kJrP8mGeY0ewVF6JxlA.jpg" alt="Pratos quentes Nah Granja">
   <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1000471403_a43ed5c1a599e80b365d848e1143231d-15_10_2025%2C%2010_03_07-djGcKNnJoHTjcy4787Pc10Wtc4D5g3.jpg" alt="Mesa de brunch Nah Granja">
   <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/20260304_123708-EoBMe84SNC9JSSDBmBY3iaeUYoWbUV.jpg" alt="Buffet completo Nah Granja">
-  <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1000341203_46cdac569ee5886e000ca2730e23ecaa-23_04_2025%2C%2010_27_05-lqemqekjbjq1dLMu5YFa5QRzNfvrDZ.png" alt="Café da manhã Nah Granja">
+  <img src="/coffee-break.png" alt="Coffee break Nah Granja">
   </div>
     </div>
   </div>
@@ -614,9 +614,15 @@ A conexão com a natureza — a fauna, a flora, a luz e o ar — não é um luxo
       </div>
       <div class="form-row">
         <div class="form-group">
+          <label for="empresa">Nome da Empresa</label>
+          <input type="text" id="empresa" name="empresa" placeholder="Razão social ou nome da empresa">
+        </div>
+        <div class="form-group">
           <label for="telefone">Telefone</label>
           <input type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999" required>
         </div>
+      </div>
+      <div class="form-row">
         <div class="form-group">
           <label for="tipo">Tipo de Evento</label>
           <select id="tipo" name="tipo" required>
@@ -641,8 +647,12 @@ A conexão com a natureza — a fauna, a flora, a luz e o ar — não é um luxo
       </div>
       <div class="form-row">
         <div class="form-group">
-          <label for="horario">Horário</label>
-          <input type="time" id="horario" name="horario" required>
+          <label for="horario-inicio">Horário de Início</label>
+          <input type="time" id="horario-inicio" name="horario-inicio" required>
+        </div>
+        <div class="form-group">
+          <label for="horario-termino">Horário de Término</label>
+          <input type="time" id="horario-termino" name="horario-termino" required>
         </div>
       </div>
       <div class="form-buttons">
@@ -773,33 +783,37 @@ A conexão com a natureza — a fauna, a flora, a luz e o ar — não é um luxo
   // Obter dados do formulario
   function getFormData() {
     const nome = document.getElementById('nome').value;
+    const empresa = document.getElementById('empresa').value;
     const email = document.getElementById('email').value;
     const telefone = document.getElementById('telefone').value;
     const tipo = document.getElementById('tipo').value;
     const pessoas = document.getElementById('pessoas').value;
     const data = document.getElementById('data').value;
-    const horario = document.getElementById('horario').value;
+    const horarioInicio = document.getElementById('horario-inicio').value;
+    const horarioTermino = document.getElementById('horario-termino').value;
     
     // Formatar data para exibicao
     const dataFormatada = data ? new Date(data + 'T00:00:00').toLocaleDateString('pt-BR') : '';
     
-    return { nome, email, telefone, tipo, pessoas, data: dataFormatada, horario };
+    return { nome, empresa, email, telefone, tipo, pessoas, data: dataFormatada, horarioInicio, horarioTermino };
   }
 
   // Enviar formulario para WhatsApp
   function enviarWhatsApp(e) {
     e.preventDefault();
-    const { nome, email, telefone, tipo, pessoas, data, horario } = getFormData();
+    const { nome, empresa, email, telefone, tipo, pessoas, data, horarioInicio, horarioTermino } = getFormData();
 
     const mensagem = `Olá! Gostaria de solicitar um orçamento para evento no Nah Granja.
 
 *Nome:* ${nome}
+*Empresa:* ${empresa || 'Não informado'}
 *E-mail:* ${email}
 *Telefone:* ${telefone}
 *Tipo de Evento:* ${tipo}
 *Quantidade de Pessoas:* ${pessoas}
 *Data do Evento:* ${data}
-*Horário:* ${horario}`;
+*Horário de Início:* ${horarioInicio}
+*Horário de Término:* ${horarioTermino}`;
 
     const whatsappUrl = `https://wa.me/5511940439119?text=${encodeURIComponent(mensagem)}`;
     window.open(whatsappUrl, '_blank');
@@ -813,18 +827,20 @@ A conexão com a natureza — a fauna, a flora, a luz e o ar — não é um luxo
       return;
     }
     
-    const { nome, email, telefone, tipo, pessoas, data, horario } = getFormData();
+    const { nome, empresa, email, telefone, tipo, pessoas, data, horarioInicio, horarioTermino } = getFormData();
 
     const assunto = `Solicitação de Orçamento - ${tipo} - ${nome}`;
     const corpo = `Olá! Gostaria de solicitar um orçamento para evento no Nah Granja.
 
 Nome: ${nome}
+Empresa: ${empresa || 'Não informado'}
 E-mail: ${email}
 Telefone: ${telefone}
 Tipo de Evento: ${tipo}
 Quantidade de Pessoas: ${pessoas}
 Data do Evento: ${data}
-Horário: ${horario}`;
+Horário de Início: ${horarioInicio}
+Horário de Término: ${horarioTermino}`;
 
     const mailtoUrl = `mailto:luciana@nahgranja.com.br?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(corpo)}`;
     window.location.href = mailtoUrl;
