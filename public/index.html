@@ -603,13 +603,9 @@ A conexão com a natureza — a fauna, a flora, a luz e o ar — não é um luxo
     <p class="form-intro reveal">Preencha o formulário abaixo e entraremos em contato pelo WhatsApp com uma proposta personalizada.</p>
     <form class="contact-form reveal" id="contactForm" onsubmit="enviarWhatsApp(event)">
       <div class="form-row">
-        <div class="form-group">
+        <div class="form-group full">
           <label for="nome">Nome</label>
           <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
-        </div>
-        <div class="form-group">
-          <label for="email">E-mail</label>
-          <input type="email" id="email" name="email" placeholder="seu@email.com" required>
         </div>
       </div>
       <div class="form-row">
@@ -618,11 +614,15 @@ A conexão com a natureza — a fauna, a flora, a luz e o ar — não é um luxo
           <input type="text" id="empresa" name="empresa" placeholder="Razão social ou nome da empresa">
         </div>
         <div class="form-group">
-          <label for="telefone">Telefone</label>
-          <input type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999" required>
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" placeholder="seu@email.com" required>
         </div>
       </div>
       <div class="form-row">
+        <div class="form-group">
+          <label for="telefone">Telefone</label>
+          <input type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999" required>
+        </div>
         <div class="form-group">
           <label for="tipo">Tipo de Evento</label>
           <select id="tipo" name="tipo" required>
