@@ -19,7 +19,7 @@
   /* NAV */
   nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:22px 64px;transition:all .45s ease}
   nav.solid{background:rgba(42,61,46,.97);padding:14px 64px;backdrop-filter:blur(12px)}
-  .nav-logo{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;font-style:italic;color:#fff;letter-spacing:2px;text-decoration:none}
+  .nav-logo{color:#fff;letter-spacing:2px;text-decoration:none}
   .nav-links{display:flex;gap:36px;list-style:none;align-items:center}
   .nav-links a{color:rgba(255,255,255,.78);text-decoration:none;font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;font-weight:500;transition:color .2s}
   .nav-links a:hover{color:var(--sand)}
@@ -44,13 +44,14 @@
   @keyframes slowzoom{from{transform:scale(1)}to{transform:scale(1.06)}}
   .hero-content{position:relative;text-align:center;color:#fff;padding:0 24px;animation:fadeUp 1.1s ease both;z-index:2}
   .hero-eyebrow{display:inline-block;font-size:10.5px;letter-spacing:5px;text-transform:uppercase;color:#fff;font-weight:600;margin-bottom:8px;margin-top:32px;border:1px solid rgba(255,255,255,.5);padding:6px 18px;background:rgba(0,0,0,.25);backdrop-filter:blur(4px)}
-  .hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(70px,11vw,136px);font-weight:300;font-style:italic;line-height:.9;letter-spacing:-2px;margin-top:-5px;margin-bottom:-5px;text-shadow:0 4px 32px rgba(0,0,0,.25)}
+  .hero-title{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;margin-top:-5px;margin-bottom:-5px}
   .hero-tagline{font-size:13px;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.75);font-weight:300;margin-top:-48px;margin-bottom:18px}
-  .hero-btn{display:inline-flex;align-items:center;gap:10px;background:var(--sand);color:var(--forest);text-decoration:none;padding:16px 42px;margin-bottom:0;font-size:10.5px;letter-spacing:3px;text-transform:uppercase;font-weight:700;transition:all .3s}
+  .hero-btn{display:inline-flex;align-items:center;gap:10px;background:var(--sand);color:var(--forest);text-decoration:none;padding:16px 42px;font-size:10.5px;letter-spacing:3px;text-transform:uppercase;font-weight:700;transition:all .3s}
   .hero-btn:hover{background:#fff;transform:translateY(-3px);box-shadow:0 14px 40px rgba(0,0,0,.35)}
   .hero-scroll{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,.5);font-size:9px;letter-spacing:3px;text-transform:uppercase;animation:scrollpulse 2.5s ease-in-out infinite;z-index:2}
   .hero-scroll::after{content:'';width:1px;height:44px;background:linear-gradient(to bottom,rgba(255,255,255,.5),transparent)}
   @keyframes scrollpulse{0%,100%{opacity:.5;transform:translateX(-50%) translateY(0)}50%{opacity:1;transform:translateX(-50%) translateY(6px)}}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:translateY(0)}}
 
   /* PARTICLES */
   .hero-particles{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
@@ -74,7 +75,6 @@
   .eyebrow{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--sage);font-weight:700;margin-bottom:14px}
   .eyebrow.lt{color:var(--sand)}
   .heading{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,4.5vw,56px);font-weight:300;font-style:italic;line-height:1.1;color:var(--forest)}
-  .heading.lt{color:#fff}
   .rule{width:44px;height:1px;background:var(--sand);margin:22px 0}
 
   /* SOBRE */
@@ -87,7 +87,7 @@
   .planta-section{background:#fff;padding:100px 80px}
   .planta-inner{max-width:1000px;margin:0 auto;text-align:center}
   .planta-section .heading{margin-bottom:16px}
-  .planta-section .intro{font-size:15px;color:var(--text-light);font-weight:300;line-height:1.7;margin-bottom:48px;max-width:600px;margin-left:auto;margin-right:auto}
+  .intro{font-size:15px;color:var(--text-light);font-weight:300;line-height:1.7;margin-bottom:48px;max-width:600px;margin-left:auto;margin-right:auto}
   .planta-container{position:relative;display:inline-block;max-width:100%;perspective:1500px}
   .planta-container img.planta-base{width:100%;height:auto;display:block;transition:transform .6s ease}
   .planta-hotspot{position:absolute;top:0;bottom:0;cursor:pointer;text-decoration:none;display:block}
@@ -103,8 +103,8 @@
   .manifesto{background:var(--forest);padding:120px 80px;position:relative;overflow:hidden;text-align:center}
   .manifesto::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 60%,rgba(78,110,81,.18) 0%,transparent 68%)}
   .manifesto-q{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,2.6vw,32px);font-weight:300;font-style:italic;color:rgba(255,255,255,.88);line-height:1.65;max-width:780px;margin:0 auto 36px;position:relative}
-  .manifesto-q::before{content:'"';font-size:130px;color:var(--sage-light);opacity:.22;position:absolute;top:-48px;left:-16px;font-family:Georgia,serif;line-height:1}
-  .manifesto-q::after{content:'"';font-size:130px;color:var(--sage-light);opacity:.22;position:absolute;bottom:-80px;right:-16px;font-family:Georgia,serif;line-height:1}
+  .manifesto-q::before{content:'\201C';font-size:130px;color:var(--sage-light);opacity:.22;position:absolute;top:-48px;left:-16px;font-family:Georgia,serif;line-height:1}
+  .manifesto-q::after{content:'\201D';font-size:130px;color:var(--sage-light);opacity:.22;position:absolute;bottom:-80px;right:-16px;font-family:Georgia,serif;line-height:1}
   .manifesto-by{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--sand);font-weight:600}
 
   /* SALA PAU-FERRO */
@@ -160,13 +160,6 @@
   .sala-dark-img .crossfade.hidden{opacity:0}
   .sala-dark-img .crossfade.visible{opacity:1}
 
-  /* MOSAICO */
-  .mosaic{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:320px 320px;gap:4px}
-  .mosaic-item{overflow:hidden}
-  .mosaic-item img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease;display:block}
-  .mosaic-item:hover img{transform:scale(1.06)}
-  .mosaic-item:first-child{grid-row:span 2}
-
   /* GASTRONOMIA */
   .gastro{background:var(--cream-dark);padding:110px 80px}
   .gastro-inner{max-width:1180px;margin:0 auto}
@@ -181,23 +174,6 @@
   .gastro-photos img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
   .gastro-photos img:hover{transform:scale(1.03)}
 
-  /* CTA */
-  .cta-block{background:var(--forest);padding:130px 80px;text-align:center;position:relative;overflow:hidden}
-  .cta-block::before{content:'';position:absolute;top:-120px;right:-120px;width:500px;height:500px;border-radius:50%;background:var(--sage);opacity:.05}
-  .cta-block::after{content:'';position:absolute;bottom:-80px;left:-80px;width:360px;height:360px;border-radius:50%;background:var(--sand);opacity:.05}
-  .cta-inner{position:relative;max-width:680px;margin:0 auto}
-  .cta-block p{font-size:16px;color:rgba(255,255,255,.62);line-height:1.85;font-weight:300;margin-bottom:50px;margin-top:18px}
-  .cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-  .btn-prim{display:inline-flex;align-items:center;gap:10px;background:var(--sand);color:var(--forest);text-decoration:none;padding:16px 38px;font-size:10.5px;letter-spacing:3px;text-transform:uppercase;font-weight:700;transition:all .3s}
-  .btn-prim:hover{background:var(--cream);transform:translateY(-2px)}
-  .btn-out{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,.28);color:#fff;text-decoration:none;padding:16px 38px;font-size:10.5px;letter-spacing:3px;text-transform:uppercase;font-weight:500;transition:all .3s}
-  .btn-out:hover{border-color:var(--sand);color:var(--sand);transform:translateY(-2px)}
-  .contact-strip{margin-top:64px;display:flex;justify-content:center;gap:56px;flex-wrap:wrap;padding-top:56px;border-top:1px solid rgba(255,255,255,.08)}
-  .cs-item{display:flex;flex-direction:column;align-items:center;gap:6px}
-  .cs-label{font-size:9.5px;letter-spacing:3px;text-transform:uppercase;color:var(--sand);font-weight:700}
-  .cs-val{font-size:15px;color:rgba(255,255,255,.72);font-weight:300;text-decoration:none;transition:color .2s}
-  .cs-val:hover{color:var(--sand)}
-
   /* FORMULARIO */
   .form-section{background:var(--white);padding:100px 80px}
   .form-inner{max-width:720px;margin:0 auto}
@@ -209,22 +185,19 @@
   .form-group{display:flex;flex-direction:column;gap:6px}
   .form-group.full{grid-column:1/-1}
   .form-group label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);font-weight:600}
-  .form-group input,.form-group select,.form-group textarea{padding:14px 16px;border:1px solid var(--sand-light);background:var(--cream);font-family:'Raleway',sans-serif;font-size:14px;color:var(--text);transition:border-color .2s,box-shadow .2s;outline:none}
-  .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--sage);box-shadow:0 0 0 3px rgba(78,110,81,.1)}
-  .form-group input::placeholder,.form-group textarea::placeholder{color:var(--text-light);opacity:.6}
-  .form-group select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%235A6655' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center}
+  .form-group input,.form-group select{padding:14px 16px;border:1px solid var(--sand-light);background:var(--cream);font-family:'Raleway',sans-serif;font-size:14px;color:var(--text);transition:border-color .2s,box-shadow .2s;outline:none;width:100%}
+  .form-group input:focus,.form-group select:focus{border-color:var(--sage);box-shadow:0 0 0 3px rgba(78,110,81,.1)}
+  .form-group input::placeholder{color:var(--text-light);opacity:.6}
+  .form-group select{cursor:pointer;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%235A6655' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;background-color:var(--cream)}
   .form-buttons{display:flex;flex-direction:column;gap:12px;align-items:center;margin-top:12px}
-  .form-submit{background:var(--forest);color:#fff;border:none;padding:18px 40px;font-family:'Raleway',sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:700;cursor:pointer;transition:all .3s}
+  .form-submit{background:var(--forest);color:#fff;border:none;padding:18px 40px;font-family:'Raleway',sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:700;cursor:pointer;transition:all .3s;min-width:260px}
   .form-submit:hover{background:var(--sage);transform:translateY(-2px);box-shadow:0 8px 24px rgba(42,61,46,.25)}
   .form-email{background:transparent;border:1px solid var(--forest);color:var(--forest)}
   .form-email:hover{background:var(--forest);color:#fff}
-  .form-msg{text-align:center;font-size:13px;padding:12px;border-radius:2px;display:none}
-  .form-msg.success{background:#e8f5e9;color:#2e7d32;display:block}
-  .form-msg.error{background:#fce4ec;color:#c62828;display:block}
 
   /* FOOTER */
   footer{background:#1a2e1e;padding:30px 80px;display:flex;align-items:center;justify-content:space-between}
-  .f-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;font-style:italic;color:rgba(255,255,255,.38);letter-spacing:2px}
+  .f-logo{color:rgba(255,255,255,.38);letter-spacing:2px}
   .f-copy{font-size:10.5px;color:rgba(255,255,255,.28);letter-spacing:.5px}
   footer a{color:rgba(255,255,255,.36);text-decoration:none;font-size:11px;transition:color .2s}
   footer a:hover{color:var(--sand)}
@@ -232,65 +205,37 @@
   /* REVEAL */
   .reveal{opacity:0;transform:translateY(28px);transition:opacity .75s ease,transform .75s ease}
   .reveal.in{opacity:1;transform:translateY(0)}
-  @keyframes fadeUp{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:translateY(0)}}
 
-  /* PLACEHOLDER */
-  .ph{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,var(--forest-mid),var(--sage));width:100%;height:100%}
-  .ph span{color:rgba(255,255,255,.4);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;text-align:center;padding:0 24px;line-height:1.6}
-
-  /* RESPONSIVO MOBILE */
+  /* MOBILE */
   @media(max-width:900px){
     nav{padding:16px 24px}
     nav.solid{padding:12px 24px}
     .nav-links{display:none}
     .nav-hamburger{display:flex}
-
     .hero-title img{height:clamp(100px,42vw,180px) !important;margin-bottom:24px !important}
     .hero-tagline{margin-top:-8px;margin-bottom:28px}
-    .hero-eyebrow{margin-bottom:16px}
-
     .sobre{padding:60px 24px}
     .sobre-titulo{font-size:24px;margin-bottom:32px}
-
     .planta-section{padding:60px 24px}
-
     .manifesto{padding:60px 24px}
     .manifesto-q{font-size:18px}
-    .manifesto-q::before{font-size:80px;top:-28px;left:-8px}
-    .manifesto-q::after{font-size:80px;bottom:-50px;right:-8px}
-
     .sala-pf{grid-template-columns:1fr}
     .sala-info{padding:48px 24px}
     .specs-row{flex-wrap:wrap;gap:20px}
-    .spec-val{font-size:28px}
-
     .sala-pit{grid-template-columns:1fr}
     .sala-dark{padding:48px 24px;order:2}
     .sala-dark-img{order:1;min-height:320px}
-
     .carousel{padding:40px 24px 48px}
     .carousel-header h2{font-size:32px}
     .carousel-slide{width:100%}
     .carousel-track{gap:0}
     .carousel-slide img{aspect-ratio:4/5}
-    .carousel-caption{padding:14px 16px 20px}
-    .carousel-caption h4{font-size:18px}
-
     .gastro{padding:60px 24px}
     .gastro-hd{grid-template-columns:1fr;gap:40px}
     .gastro-photos{grid-template-columns:1fr;grid-template-rows:auto}
-
-    .cta-block{padding:80px 24px}
-    .cta-btns{flex-direction:column;align-items:center}
-    .contact-strip{flex-direction:column;gap:32px}
-
     .form-section{padding:60px 24px}
     .form-row{grid-template-columns:1fr}
-
     footer{flex-direction:column;gap:16px;text-align:center;padding:24px}
-
-    .mosaic{grid-template-columns:1fr;grid-template-rows:auto}
-    .mosaic-item:first-child{grid-row:span 1}
   }
 </style>
 </head>
@@ -298,7 +243,9 @@
 
 <!-- NAV -->
 <nav id="nav">
-  <a href="#" class="nav-logo"><img src="assets/logo-branco.png" alt="Nah Granja" style="height:40px;width:auto;"></a>
+  <a href="#" class="nav-logo">
+    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/branco-25dUvbFxs6PmBzwlcg4NyJjiWlgp0J.png" alt="Nah Granja" style="height:40px;width:auto;">
+  </a>
   <ul class="nav-links">
     <li><a href="#espacos">Espaços</a></li>
     <li><a href="#gastronomia">Gastronomia</a></li>
@@ -318,12 +265,7 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg" style="
-    background-image:
-      linear-gradient(to bottom,rgba(10,18,12,.42)0%,rgba(10,18,12,.05)40%,rgba(10,18,12,.55)100%),
-      url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/20190919_151600-E5qVwxMHsui2AtTikEiImWZ1UpadsU.jpg');
-    background-size:cover;background-position:center;">
-  </div>
+  <div class="hero-bg" style="background-image:linear-gradient(to bottom,rgba(10,18,12,.42)0%,rgba(10,18,12,.05)40%,rgba(10,18,12,.55)100%),url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/20190919_151600-E5qVwxMHsui2AtTikEiImWZ1UpadsU.jpg');background-size:cover;background-position:center;"></div>
   <div class="hero-particles">
     <span class="particle"></span><span class="particle"></span><span class="particle"></span>
     <span class="particle"></span><span class="particle"></span><span class="particle"></span>
@@ -332,7 +274,9 @@
   </div>
   <div class="hero-content">
     <p class="hero-eyebrow">Granja Julieta · São Paulo</p>
-    <h1 class="hero-title"><img src="assets/logo-branco.png" alt="Nah Granja" style="height:clamp(80px,35vw,380px);width:auto;margin-bottom:8px;"></h1>
+    <h1 class="hero-title">
+      <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/branco-25dUvbFxs6PmBzwlcg4NyJjiWlgp0J.png" alt="Nah Granja" style="height:clamp(80px,35vw,380px);width:auto;margin-bottom:8px;">
+    </h1>
     <p class="hero-tagline">Espaço para Eventos Especiais</p>
     <a href="#formulario" class="hero-btn">Solicite um Orçamento</a>
   </div>
@@ -344,11 +288,8 @@
   <div class="sobre-container reveal">
     <h2 class="sobre-titulo">Onde grandes ideias encontram o ambiente certo</h2>
     <div class="sobre-video-wrap">
-      <iframe
-        src="https://drive.google.com/file/d/1Ax5ke_QkZaFAxj2cyH5KT5YXRpczvnRn/preview"
-        width="100%" height="100%"
-        style="border:none;" allow="autoplay" allowfullscreen>
-      </iframe>
+      <iframe src="https://drive.google.com/file/d/1Ax5ke_QkZaFAxj2cyH5KT5YXRpczvnRn/preview"
+        width="100%" height="100%" style="border:none;" allow="autoplay" allowfullscreen></iframe>
     </div>
   </div>
 </section>
@@ -358,7 +299,7 @@
   <div class="planta-inner">
     <p class="eyebrow reveal">Explore o espaço</p>
     <h2 class="heading reveal">Conheça nossa casa</h2>
-    <p class="intro reveal">Passe o mouse sobre as áreas da planta para descobrir cada ambiente do Nah Granja.<br><strong>Clique e conheça</strong></p>
+    <p class="intro reveal">Passe o mouse sobre as áreas da planta para descobrir cada ambiente.<br><strong>Clique e conheça</strong></p>
     <div class="planta-container reveal" id="plantaContainer">
       <img class="planta-base" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1-7kVi8lgGOphykKBUF8cFexWyeIBtiD.png" alt="Planta Nah Granja">
       <a href="sala-pau-ferro.html" class="planta-hotspot hotspot-ferro" onclick="navigateWithZoom(event,'sala-pau-ferro.html')">
@@ -383,7 +324,7 @@
   <!-- SALA PAU-FERRO -->
   <div class="sala-pf">
     <div class="sala-ph-wrap">
-      <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/sala-pf-escolar.jpg-O1I0AuHtc4o9Feb1tKKqP63lOLPkrb.webp" alt="Sala Pau-Ferro — montagem escolar">
+      <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/sala-pf-escolar.jpg-O1I0AuHtc4o9Feb1tKKqP63lOLPkrb.webp" alt="Sala Pau-Ferro">
     </div>
     <div class="sala-info reveal">
       <p class="eyebrow">Sala Principal</p>
@@ -415,31 +356,31 @@
     <div class="carousel-viewport" id="viewport1">
       <div class="carousel-track" id="track1">
         <div class="carousel-slide">
-          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1000658039-8oqHdOjMCQZKqeAbnkaveOwwVCLf9h.jpg" alt="Jardim Pau-Ferro - buffet ao ar livre">
+          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1000658039-8oqHdOjMCQZKqeAbnkaveOwwVCLf9h.jpg" alt="Jardim Pau-Ferro">
           <div class="carousel-caption"><h4>Jardim Pau-Ferro</h4><span>Refeições sob a trepadeira</span></div>
         </div>
         <div class="carousel-slide">
-          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-02-12%20at%2010.29.20-hYLbYVatqlDfjzEj4oHLwxhcsDKETG.jpeg" alt="Jardim Pau-Ferro - pérgola com vegetação">
+          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-02-12%20at%2010.29.20-hYLbYVatqlDfjzEj4oHLwxhcsDKETG.jpeg" alt="Pérgola Verde">
           <div class="carousel-caption"><h4>Pérgola Verde</h4><span>Trepadeira e natureza</span></div>
         </div>
         <div class="carousel-slide">
-          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1000658037%20%281%29-BG8Pbjm0XgpeM0K2HLi8tjnNGlkq6u.jpg" alt="Jardim Pau-Ferro - cobertura verde">
+          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1000658037%20%281%29-BG8Pbjm0XgpeM0K2HLi8tjnNGlkq6u.jpg" alt="Cobertura Verde">
           <div class="carousel-caption"><h4>Cobertura Verde</h4><span>Mesas sob a flora nativa</span></div>
         </div>
         <div class="carousel-slide">
-          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1000324589_9a3f9e8b56a96f8849c42acdd0b24f1a-28_03_2025%2C%2008_48_12-J5TnnLnQr00vrlYOjCMHtQTpUwyeMp.jpg" alt="Jardim Pau-Ferro - vista externa">
+          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1000324589_9a3f9e8b56a96f8849c42acdd0b24f1a-28_03_2025%2C%2008_48_12-J5TnnLnQr00vrlYOjCMHtQTpUwyeMp.jpg" alt="Vista do Jardim">
           <div class="carousel-caption"><h4>Vista do Jardim</h4><span>Integração com a natureza</span></div>
         </div>
         <div class="carousel-slide">
-          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/C%C3%B3pia%20de%20Design%20sem%20nome_20250328_160842_0000-6MwORkKJafpXlrOrothzuaEU0ViSQ7.png" alt="Jardim Pau-Ferro - flores azuis">
+          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/C%C3%B3pia%20de%20Design%20sem%20nome_20250328_160842_0000-6MwORkKJafpXlrOrothzuaEU0ViSQ7.png" alt="Flores Azuis">
           <div class="carousel-caption"><h4>Flores Azuis</h4><span>Mansoa alliacea no jardim</span></div>
         </div>
       </div>
     </div>
     <div class="carousel-footer">
-      <button class="carousel-btn c-prev" onclick="moveC('carousel1',-1)" style="background:rgba(42,61,46,.1);border-color:rgba(42,61,46,.25);color:var(--forest)">&#8249;</button>
+      <button class="carousel-btn" onclick="moveC('carousel1',-1)" style="background:rgba(42,61,46,.1);border-color:rgba(42,61,46,.25);color:var(--forest)">&#8249;</button>
       <div class="carousel-dots" id="dots1"></div>
-      <button class="carousel-btn c-next" onclick="moveC('carousel1',1)" style="background:rgba(42,61,46,.1);border-color:rgba(42,61,46,.25);color:var(--forest)">&#8250;</button>
+      <button class="carousel-btn" onclick="moveC('carousel1',1)" style="background:rgba(42,61,46,.1);border-color:rgba(42,61,46,.25);color:var(--forest)">&#8250;</button>
     </div>
   </div>
 
@@ -447,7 +388,7 @@
   <div class="sala-pit">
     <div class="sala-dark reveal">
       <p class="eyebrow lt">Sala Menor</p>
-      <h2 class="heading">Sala Pitangueiras</h2>
+      <h2 class="heading" style="color:#fff">Sala Pitangueiras</h2>
       <div class="rule"></div>
       <div class="specs-row">
         <div class="spec-item"><span class="spec-val">32m²</span><span class="spec-lbl">Área total</span></div>
@@ -464,8 +405,8 @@
       </div>
     </div>
     <div class="sala-dark-img" id="pitCrossfade">
-      <img class="crossfade visible" id="pitImg0" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pt1-72orZe0khdB9GVNjzFWt4Qt9CqbUMp.jpg" alt="Sala Pitangueiras — configuração escolar">
-      <img class="crossfade hidden" id="pitImg1" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pt2-Ou9AHmYbjZQK3vhGLFWGbQo5pSCqRN.jpg" alt="Sala Pitangueiras — configuração auditório">
+      <img class="crossfade visible" id="pitImg0" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pt1-72orZe0khdB9GVNjzFWt4Qt9CqbUMp.jpg" alt="Sala Pitangueiras">
+      <img class="crossfade hidden" id="pitImg1" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pt2-Ou9AHmYbjZQK3vhGLFWGbQo5pSCqRN.jpg" alt="Sala Pitangueiras">
     </div>
   </div>
 
@@ -492,9 +433,9 @@
       </div>
     </div>
     <div class="carousel-footer">
-      <button class="carousel-btn c-prev" onclick="moveC('carousel2',-1)">&#8249;</button>
+      <button class="carousel-btn" onclick="moveC('carousel2',-1)">&#8249;</button>
       <div class="carousel-dots" id="dots2"></div>
-      <button class="carousel-btn c-next" onclick="moveC('carousel2',1)">&#8250;</button>
+      <button class="carousel-btn" onclick="moveC('carousel2',1)">&#8250;</button>
     </div>
   </div>
 
@@ -509,29 +450,17 @@
         <h2 class="heading">Uma cozinha que respeita cada paladar</h2>
         <div class="rule"></div>
         <div class="gastro-features">
-          <div class="gastro-item">
-            <div class="gi-num">01</div>
-            <div class="gi-body"><strong>Cardápios Variados</strong><span>Do café da manhã ao almoço completo — cada menu elaborado para surpreender até os paladares mais exigentes.</span></div>
-          </div>
-          <div class="gastro-item">
-            <div class="gi-num">02</div>
-            <div class="gi-body"><strong>Respeito às Restrições</strong><span>Atenção individual às restrições alimentares de cada participante: vegetariano, vegano, intolerâncias e alergias.</span></div>
-          </div>
-          <div class="gastro-item">
-            <div class="gi-num">03</div>
-            <div class="gi-body"><strong>Apresentação Moderna</strong><span>Visual cuidado, ingredientes frescos e uma montagem que faz jus ao ambiente.</span></div>
-          </div>
-          <div class="gastro-item">
-            <div class="gi-num">04</div>
-            <div class="gi-body"><strong>Sabor Caseirinho</strong><span>O toque especial da comida "da granja" — feita com carinho, como se fosse em casa.</span></div>
-          </div>
+          <div class="gastro-item"><div class="gi-num">01</div><div class="gi-body"><strong>Cardápios Variados</strong><span>Do café da manhã ao almoço completo — cada menu elaborado para surpreender até os paladares mais exigentes.</span></div></div>
+          <div class="gastro-item"><div class="gi-num">02</div><div class="gi-body"><strong>Respeito às Restrições</strong><span>Atenção individual às restrições alimentares de cada participante: vegetariano, vegano, intolerâncias e alergias.</span></div></div>
+          <div class="gastro-item"><div class="gi-num">03</div><div class="gi-body"><strong>Apresentação Moderna</strong><span>Visual cuidado, ingredientes frescos e uma montagem que faz jus ao ambiente.</span></div></div>
+          <div class="gastro-item"><div class="gi-num">04</div><div class="gi-body"><strong>Sabor Caseirinho</strong><span>O toque especial da comida "da granja" — feita com carinho, como se fosse em casa.</span></div></div>
         </div>
       </div>
       <div class="gastro-photos reveal">
         <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1000317044_774bf06f1e239e5d637fd9992e1d1a01-17_02_2025%2C%2008_43_20-wK19jrscRh4kJrP8mGeY0ewVF6JxlA.jpg" alt="Pratos quentes Nah Granja">
         <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1000471403_a43ed5c1a599e80b365d848e1143231d-15_10_2025%2C%2010_03_07-djGcKNnJoHTjcy4787Pc10Wtc4D5g3.jpg" alt="Mesa de brunch Nah Granja">
         <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/20260304_123708-EoBMe84SNC9JSSDBmBY3iaeUYoWbUV.jpg" alt="Buffet completo Nah Granja">
-        <img src="assets/coffee-break.png" alt="Coffee break Nah Granja">
+        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/COFFEE%20BREAK-NqH5VohxLxoZekZu5d8RuLenL35pfw.png" alt="Coffee break Nah Granja">
       </div>
     </div>
   </div>
@@ -542,9 +471,8 @@
   <div class="form-inner">
     <p class="eyebrow reveal">Solicite seu orçamento</p>
     <h2 class="heading reveal">Conte-nos sobre seu evento</h2>
-    <p class="form-intro reveal">Preencha o formulário abaixo e entraremos em contato pelo WhatsApp com uma proposta personalizada.</p>
-    <div id="formMsg" class="form-msg"></div>
-    <form class="contact-form reveal" id="contactForm">
+    <p class="form-intro reveal">Preencha o formulário abaixo e entraremos em contato com uma proposta personalizada.</p>
+    <form class="contact-form reveal" id="contactForm" onsubmit="enviarWhatsApp(event)">
       <div class="form-row">
         <div class="form-group full">
           <label for="nome">Nome</label>
@@ -590,26 +518,30 @@
       </div>
       <div class="form-row">
         <div class="form-group">
-          <label for="horario_inicio">Horário de Início</label>
-          <input type="time" id="horario_inicio" name="horario_inicio" required>
+          <label for="horario-inicio">Horário de Início</label>
+          <input type="time" id="horario-inicio" name="horario-inicio" required>
         </div>
         <div class="form-group">
-          <label for="horario_termino">Horário de Término</label>
-          <input type="time" id="horario_termino" name="horario_termino" required>
+          <label for="horario-termino">Horário de Término</label>
+          <input type="time" id="horario-termino" name="horario-termino" required>
         </div>
       </div>
       <div class="form-buttons">
-        <button type="button" class="form-submit" onclick="enviarWhatsApp()">Enviar para WhatsApp</button>
-        <button type="submit" class="form-submit form-email" onclick="return submitPHP(event)">Enviar por E-mail</button>
+        <button type="submit" class="form-submit">Enviar pelo WhatsApp</button>
+        <button type="button" class="form-submit form-email" onclick="enviarEmail()">Enviar por E-mail</button>
+        <button type="button" class="form-submit" style="background:var(--sage)" onclick="enviarPHP()">Enviar Mensagem</button>
       </div>
     </form>
+    <div id="form-msg" style="display:none;text-align:center;margin-top:20px;padding:16px;font-size:14px;font-weight:500;"></div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <span class="f-logo"><img src="assets/logo-branco.png" alt="Nah Granja" style="height:28px;width:auto;opacity:.5;"></span>
-  <span class="f-copy">&copy; 2025 Nah Granja &middot; Todos os direitos reservados</span>
+  <span class="f-logo">
+    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/branco-25dUvbFxs6PmBzwlcg4NyJjiWlgp0J.png" alt="Nah Granja" style="height:28px;width:auto;opacity:.5;">
+  </span>
+  <span class="f-copy">© 2025 Nah Granja · Todos os direitos reservados</span>
   <a href="https://instagram.com/nahgranja" target="_blank">Instagram</a>
 </footer>
 
@@ -635,128 +567,137 @@
       dotsEl.innerHTML = '';
       for(let i=0;i<getPages();i++){
         const d = document.createElement('button');
-        d.className='c-dot'+(i===cur?' on':'');
-        d.onclick=()=>go(i);
+        d.className = 'c-dot'+(i===cur?' on':'');
+        d.onclick = () => go(i);
         dotsEl.appendChild(d);
       }
     }
 
     function go(page){
-      const pages=getPages(), perPage=getPerPage();
-      cur=(page+pages)%pages;
-      const slideW=slides[0].offsetWidth;
-      const gap=window.innerWidth<=900?0:16;
-      track.style.transform=`translateX(-${cur*perPage*(slideW+gap)}px)`;
-      dotsEl.querySelectorAll('.c-dot').forEach((d,i)=>d.classList.toggle('on',i===cur));
+      const pages = getPages(), perPage = getPerPage();
+      cur = (page + pages) % pages;
+      const slideW = slides[0].offsetWidth;
+      const gap = window.innerWidth <= 900 ? 0 : 16;
+      track.style.transform = 'translateX(-'+(cur*perPage*(slideW+gap))+'px)';
+      dotsEl.querySelectorAll('.c-dot').forEach((d,i) => d.classList.toggle('on', i===cur));
     }
 
-    function start(){ timer=setInterval(()=>go(cur+1),4500); }
+    function start(){ timer = setInterval(() => go(cur+1), 4500); }
     function stop(){ clearInterval(timer); }
 
-    document.getElementById(id).addEventListener('mouseenter',stop);
-    document.getElementById(id).addEventListener('mouseleave',start);
-
-    let lastW=window.innerWidth;
-    window.addEventListener('resize',()=>{
-      if((lastW<=900)!==(window.innerWidth<=900)){ cur=0; buildDots(); }
-      lastW=window.innerWidth; go(cur);
-    });
+    document.getElementById(id).addEventListener('mouseenter', stop);
+    document.getElementById(id).addEventListener('mouseleave', start);
+    window.addEventListener('resize', () => { cur=0; buildDots(); go(0); });
 
     buildDots();
-    CS[id]={go, getPage:()=>cur};
+    CS[id] = { go, getPage: () => cur };
     start();
   }
 
-  function moveC(id,dir){
-    const pages=document.getElementById('dots'+id.replace('carousel','')).children.length;
-    CS[id].go(CS[id].getPage()+dir);
+  function moveC(id, dir){
+    const pages = document.getElementById('dots'+id.replace('carousel','')).children.length;
+    CS[id].go(CS[id].getPage() + dir);
   }
   initC('carousel1');
   initC('carousel2');
 
   // Zoom planta
-  function navigateWithZoom(e,url){
+  function navigateWithZoom(e, url){
     e.preventDefault();
-    const c=document.getElementById('plantaContainer');
+    const c = document.getElementById('plantaContainer');
     c.classList.add('zoom-in');
-    setTimeout(()=>{ window.location.href=url; },600);
+    setTimeout(() => { window.location.href = url; }, 600);
   }
 
-  // Crossfade Pitangueiras
+  // Crossfade pitangueiras
   (function(){
-    let cur=0;
+    let cur = 0;
     setInterval(function(){
-      const imgs=document.querySelectorAll('#pitCrossfade .crossfade');
+      const imgs = document.querySelectorAll('#pitCrossfade .crossfade');
       imgs[cur].classList.remove('visible'); imgs[cur].classList.add('hidden');
-      cur=(cur+1)%imgs.length;
+      cur = (cur+1) % imgs.length;
       imgs[cur].classList.remove('hidden'); imgs[cur].classList.add('visible');
-    },2000);
+    }, 2000);
   })();
 
-  // Mobile Menu
+  // Mobile menu
   function toggleMobileMenu(){
     document.getElementById('hamburger').classList.toggle('open');
     document.getElementById('mobileMenu').classList.toggle('open');
-    document.body.style.overflow=document.getElementById('mobileMenu').classList.contains('open')?'hidden':'';
+    document.body.style.overflow = document.getElementById('mobileMenu').classList.contains('open') ? 'hidden' : '';
   }
   function closeMobileMenu(){
     document.getElementById('hamburger').classList.remove('open');
     document.getElementById('mobileMenu').classList.remove('open');
-    document.body.style.overflow='';
+    document.body.style.overflow = '';
   }
 
-  // Dados do formulário
+  // Dados do form
   function getFormData(){
-    const nome=document.getElementById('nome').value;
-    const empresa=document.getElementById('empresa').value;
-    const email=document.getElementById('email').value;
-    const telefone=document.getElementById('telefone').value;
-    const tipo=document.getElementById('tipo').value;
-    const pessoas=document.getElementById('pessoas').value;
-    const data=document.getElementById('data').value;
-    const horarioInicio=document.getElementById('horario_inicio').value;
-    const horarioTermino=document.getElementById('horario_termino').value;
-    const dataFormatada=data?new Date(data+'T00:00:00').toLocaleDateString('pt-BR'):'';
-    return{nome,empresa,email,telefone,tipo,pessoas,data:dataFormatada,horarioInicio,horarioTermino};
+    const dataRaw = document.getElementById('data').value;
+    const dataFormatada = dataRaw ? new Date(dataRaw+'T00:00:00').toLocaleDateString('pt-BR') : '';
+    return {
+      nome: document.getElementById('nome').value,
+      empresa: document.getElementById('empresa').value,
+      email: document.getElementById('email').value,
+      telefone: document.getElementById('telefone').value,
+      tipo: document.getElementById('tipo').value,
+      pessoas: document.getElementById('pessoas').value,
+      data: dataFormatada,
+      horarioInicio: document.getElementById('horario-inicio').value,
+      horarioTermino: document.getElementById('horario-termino').value
+    };
   }
 
   // WhatsApp
-  function enviarWhatsApp(){
-    const form=document.getElementById('contactForm');
-    if(!form.checkValidity()){ form.reportValidity(); return; }
-    const{nome,empresa,email,telefone,tipo,pessoas,data,horarioInicio,horarioTermino}=getFormData();
-    const msg=`Olá! Gostaria de solicitar um orçamento para evento no Nah Granja.\n\n*Nome:* ${nome}\n*Empresa:* ${empresa||'Não informado'}\n*E-mail:* ${email}\n*Telefone:* ${telefone}\n*Tipo de Evento:* ${tipo}\n*Quantidade de Pessoas:* ${pessoas}\n*Data do Evento:* ${data}\n*Horário de Início:* ${horarioInicio}\n*Horário de Término:* ${horarioTermino}`;
-    window.open(`https://wa.me/5511940439119?text=${encodeURIComponent(msg)}`,'_blank');
-  }
-
-  // PHP Email via fetch
-  async function submitPHP(e){
+  function enviarWhatsApp(e){
     e.preventDefault();
-    const form=document.getElementById('contactForm');
-    if(!form.checkValidity()){ form.reportValidity(); return; }
-    const msgEl=document.getElementById('formMsg');
-    const btn=form.querySelector('.form-email');
-    btn.disabled=true; btn.textContent='Enviando...';
-    try{
-      const fd=new FormData(form);
-      const res=await fetch('contato.php',{method:'POST',body:fd});
-      const json=await res.json();
-      msgEl.className='form-msg '+(json.ok?'success':'error');
-      msgEl.textContent=json.msg;
-      if(json.ok) form.reset();
-    }catch(err){
-      msgEl.className='form-msg error';
-      msgEl.textContent='Erro ao enviar. Tente pelo WhatsApp.';
-    }
-    btn.disabled=false; btn.textContent='Enviar por E-mail';
-    msgEl.scrollIntoView({behavior:'smooth',block:'nearest'});
+    const d = getFormData();
+    const msg = `Olá! Gostaria de solicitar um orçamento para evento no Nah Granja.\n\n*Nome:* ${d.nome}\n*Empresa:* ${d.empresa||'Não informado'}\n*E-mail:* ${d.email}\n*Telefone:* ${d.telefone}\n*Tipo de Evento:* ${d.tipo}\n*Quantidade de Pessoas:* ${d.pessoas}\n*Data do Evento:* ${d.data}\n*Horário de Início:* ${d.horarioInicio}\n*Horário de Término:* ${d.horarioTermino}`;
+    window.open('https://wa.me/5511940439119?text='+encodeURIComponent(msg), '_blank');
   }
 
-  // Reveal on scroll
-  const io=new IntersectionObserver(entries=>{
-    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
-  },{threshold:.12});
-  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  // E-mail
+  function enviarEmail(){
+    const form = document.getElementById('contactForm');
+    if(!form.checkValidity()){ form.reportValidity(); return; }
+    const d = getFormData();
+    const assunto = 'Solicitação de Orçamento - '+d.tipo+' - '+d.nome;
+    const corpo = `Olá! Gostaria de solicitar um orçamento.\n\nNome: ${d.nome}\nEmpresa: ${d.empresa||'Não informado'}\nE-mail: ${d.email}\nTelefone: ${d.telefone}\nTipo de Evento: ${d.tipo}\nQuantidade de Pessoas: ${d.pessoas}\nData do Evento: ${d.data}\nHorário de Início: ${d.horarioInicio}\nHorário de Término: ${d.horarioTermino}`;
+    window.location.href = 'mailto:luciana@nahgranja.com.br?subject='+encodeURIComponent(assunto)+'&body='+encodeURIComponent(corpo);
+  }
+
+  // PHP (AJAX)
+  function enviarPHP(){
+    const form = document.getElementById('contactForm');
+    if(!form.checkValidity()){ form.reportValidity(); return; }
+    const d = getFormData();
+    const msgEl = document.getElementById('form-msg');
+    const fd = new FormData();
+    Object.keys(d).forEach(k => fd.append(k, d[k]));
+    fetch('contato.php', { method:'POST', body: fd })
+      .then(r => r.json())
+      .then(res => {
+        msgEl.style.display = 'block';
+        msgEl.style.background = res.ok ? '#e8f5e9' : '#ffebee';
+        msgEl.style.color = res.ok ? '#2e7d32' : '#c62828';
+        msgEl.textContent = res.mensagem;
+        if(res.ok) form.reset();
+      })
+      .catch(() => {
+        msgEl.style.display = 'block';
+        msgEl.style.background = '#ffebee';
+        msgEl.style.color = '#c62828';
+        msgEl.textContent = 'Erro ao enviar. Tente pelo WhatsApp.';
+      });
+  }
+
+  // Reveal
+  const els = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.12});
+  els.forEach(el => io.observe(el));
 </script>
 </body>
 </html>

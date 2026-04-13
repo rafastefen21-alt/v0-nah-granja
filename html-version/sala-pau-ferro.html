@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sala Pau-Ferro · Nah Granja</title>
+<meta name="description" content="Sala Pau-Ferro — 78m², pé direito de 3,5m, até 100 pessoas. Conheça as capacidades e solicite orçamento.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--cream:#F6F1E9;--cream-dark:#EDE5D2;--forest:#2A3D2E;--sage:#4E6E51;--sage-light:#7A9E7D;--sand:#C4A468;--sand-light:#DDD0B0;--text:#252F23;--text-light:#5A6655;--white:#FDFAF4}
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Raleway',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden}
+
+  /* NAV */
+  nav{background:var(--forest);display:flex;align-items:center;justify-content:space-between;padding:18px 64px;position:sticky;top:0;z-index:200}
+  .nav-logo img{height:38px;width:auto}
+  .nav-links{display:flex;gap:32px;list-style:none}
+  .nav-links a{color:rgba(255,255,255,.75);text-decoration:none;font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;font-weight:500;transition:color .2s}
+  .nav-links a:hover{color:var(--sand)}
+  .nav-cta{background:var(--sand)!important;color:var(--forest)!important;padding:10px 22px!important;font-weight:700!important;letter-spacing:2px!important}
+  .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+  .nav-hamburger span{width:24px;height:2px;background:#fff}
+  .mobile-menu{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(42,61,46,.98);z-index:199;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:32px;opacity:0;visibility:hidden;transition:all .4s ease}
+  .mobile-menu.open{opacity:1;visibility:visible}
+  .mobile-menu a{color:#fff;text-decoration:none;font-size:14px;letter-spacing:3px;text-transform:uppercase;font-weight:500}
+  .mobile-menu .nav-cta{background:var(--sand);color:var(--forest);padding:14px 28px;margin-top:16px}
+
+  /* HERO */
+  .hero{height:72vh;min-height:480px;position:relative;display:flex;align-items:flex-end;justify-content:flex-start;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;background:linear-gradient(to right,rgba(10,18,12,.7)0%,rgba(10,18,12,.18)60%),url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/sala-pf-escolar.jpg-O1I0AuHtc4o9Feb1tKKqP63lOLPkrb.webp') center/cover no-repeat}
+  .hero-text{position:relative;padding:0 80px 64px;color:#fff;animation:fadeUp .9s ease both}
+  .eyebrow{display:inline-block;font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--sand);font-weight:700;margin-bottom:12px}
+  h1.hero-h1{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,6vw,80px);font-weight:300;font-style:italic;line-height:1;color:#fff;margin-bottom:16px}
+  .hero-specs-row{display:flex;gap:40px;margin-top:16px}
+  .hs{display:flex;flex-direction:column;gap:2px}
+  .hs-val{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:400;color:#fff;line-height:1}
+  .hs-lbl{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.55)}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+
+  /* CONTENT */
+  .container{max-width:1100px;margin:0 auto;padding:0 80px}
+  .section{padding:80px 0}
+  .heading{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3.5vw,44px);font-weight:300;font-style:italic;color:var(--forest);margin-bottom:12px}
+  .rule{width:40px;height:1px;background:var(--sand);margin:20px 0}
+
+  /* LAYOUTS GRID */
+  .layouts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+  .layout-card{background:var(--white);border:1px solid var(--sand-light);padding:32px 24px;text-align:center;transition:box-shadow .3s,transform .3s;cursor:default}
+  .layout-card:hover{box-shadow:0 8px 32px rgba(42,61,46,.1);transform:translateY(-4px)}
+  .lc-num{font-family:'Cormorant Garamond',serif;font-size:56px;color:var(--sage);font-weight:300;line-height:1}
+  .lc-pax{font-size:9px;letter-spacing:1.5px;color:var(--text-light);text-transform:uppercase;margin:2px 0 10px}
+  .lc-name{font-size:12.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--forest)}
+  .lc-desc{font-size:12px;color:var(--text-light);font-weight:300;line-height:1.6;margin-top:6px}
+
+  /* GALLERY */
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:40px}
+  .gallery-item{overflow:hidden;cursor:pointer;position:relative}
+  .gallery-item img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .5s ease}
+  .gallery-item:hover img{transform:scale(1.06)}
+  .gallery-item.wide{grid-column:span 2}
+  .gallery-item.tall{grid-row:span 2}
+  .gallery-item.tall img{aspect-ratio:auto;height:100%;object-fit:cover}
+
+  /* LIGHTBOX */
+  .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.93);z-index:900;display:none;align-items:center;justify-content:center}
+  .lightbox.open{display:flex}
+  .lightbox img{max-width:90vw;max-height:90vh;object-fit:contain}
+  .lb-close{position:absolute;top:20px;right:28px;color:#fff;font-size:32px;cursor:pointer;background:none;border:none;font-family:'Raleway',sans-serif;opacity:.7;transition:opacity .2s}
+  .lb-close:hover{opacity:1}
+  .lb-arrow{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:28px;padding:12px 16px;cursor:pointer;transition:background .2s}
+  .lb-arrow:hover{background:var(--sand);color:var(--forest)}
+  .lb-prev{left:20px}
+  .lb-next{right:20px}
+
+  /* AMENIDADES */
+  .amenidades{background:var(--forest);padding:80px;margin:0}
+  .amenidades h2{color:#fff;font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3.5vw,44px);font-weight:300;font-style:italic;margin-bottom:12px}
+  .amenidades .rule{background:var(--sand)}
+  .amen-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:40px}
+  .amen-item{display:flex;flex-direction:column;gap:10px}
+  .amen-icon{width:40px;height:40px;border:1px solid rgba(196,164,104,.35);display:flex;align-items:center;justify-content:center;font-size:18px}
+  .amen-name{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#fff;font-weight:600}
+  .amen-desc{font-size:12.5px;color:rgba(255,255,255,.5);font-weight:300;line-height:1.55}
+
+  /* CTA */
+  .cta-section{background:var(--cream-dark);padding:80px;text-align:center}
+  .cta-section .heading{text-align:center;margin-bottom:24px}
+  .cta-section p{font-size:15px;color:var(--text-light);font-weight:300;line-height:1.7;margin-bottom:40px;max-width:520px;margin-left:auto;margin-right:auto}
+  .cta-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+  .btn-primary{background:var(--forest);color:#fff;padding:16px 40px;font-size:10.5px;letter-spacing:3px;text-transform:uppercase;font-weight:700;text-decoration:none;transition:all .3s;border:none;cursor:pointer;font-family:'Raleway',sans-serif}
+  .btn-primary:hover{background:var(--sage);transform:translateY(-2px)}
+  .btn-secondary{background:transparent;color:var(--forest);border:1px solid var(--forest);padding:16px 40px;font-size:10.5px;letter-spacing:3px;text-transform:uppercase;font-weight:700;text-decoration:none;transition:all .3s}
+  .btn-secondary:hover{background:var(--forest);color:#fff}
+
+  /* REVEAL */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:translateY(0)}
+
+  /* BACK */
+  .back-link{display:inline-flex;align-items:center;gap:8px;color:rgba(255,255,255,.6);font-size:10.5px;letter-spacing:2px;text-transform:uppercase;font-weight:500;text-decoration:none;margin-bottom:28px;transition:color .2s}
+  .back-link:hover{color:var(--sand)}
+
+  /* MOBILE */
+  @media(max-width:900px){
+    nav{padding:16px 24px}
+    .nav-links{display:none}
+    .nav-hamburger{display:flex}
+    .hero-text{padding:0 24px 40px}
+    .hero-specs-row{gap:24px}
+    .container{padding:0 24px}
+    .layouts-grid{grid-template-columns:1fr 1fr}
+    .gallery{grid-template-columns:1fr 1fr}
+    .gallery-item.wide,.gallery-item.tall{grid-column:auto;grid-row:auto}
+    .gallery-item.tall img{aspect-ratio:4/3;height:auto}
+    .amenidades{padding:60px 24px}
+    .amen-grid{grid-template-columns:1fr 1fr;gap:24px}
+    .cta-section{padding:60px 24px}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo"><img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/branco-25dUvbFxs6PmBzwlcg4NyJjiWlgp0J.png" alt="Nah Granja"></a>
+  <ul class="nav-links">
+    <li><a href="index.html#espacos">Espaços</a></li>
+    <li><a href="sala-pitangueiras.html">Sala Pitangueiras</a></li>
+    <li><a href="index.html#gastronomia">Gastronomia</a></li>
+    <li><a href="index.html#formulario" class="nav-cta">Solicitar Orçamento</a></li>
+  </ul>
+  <div class="nav-hamburger" id="hamburger" onclick="toggleMobileMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html#espacos" onclick="closeMobileMenu()">Espaços</a>
+  <a href="sala-pitangueiras.html" onclick="closeMobileMenu()">Sala Pitangueiras</a>
+  <a href="index.html#gastronomia" onclick="closeMobileMenu()">Gastronomia</a>
+  <a href="index.html#formulario" class="nav-cta" onclick="closeMobileMenu()">Solicitar Orçamento</a>
+</div>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-text">
+    <a href="index.html" class="back-link">← Voltar</a>
+    <p class="eyebrow">Sala Principal</p>
+    <h1 class="hero-h1">Sala Pau-Ferro</h1>
+    <div class="hero-specs-row">
+      <div class="hs"><span class="hs-val">78m²</span><span class="hs-lbl">Área total</span></div>
+      <div class="hs"><span class="hs-val">3,5m</span><span class="hs-lbl">Pé direito</span></div>
+      <div class="hs"><span class="hs-val">100</span><span class="hs-lbl">Pax máx</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- LAYOUTS -->
+<div style="background:var(--white)">
+  <div class="container section reveal">
+    <p class="eyebrow">Formatos disponíveis</p>
+    <h2 class="heading">Capacidades por Arranjo</h2>
+    <div class="rule"></div>
+    <div class="layouts-grid">
+      <div class="layout-card">
+        <div class="lc-num">48</div><div class="lc-pax">pessoas</div>
+        <div class="lc-name">Escolar</div>
+        <div class="lc-desc">Fileiras de mesas com cadeiras — ideal para treinamentos e aulas.</div>
+      </div>
+      <div class="layout-card">
+        <div class="lc-num">80</div><div class="lc-pax">pessoas</div>
+        <div class="lc-name">Auditório</div>
+        <div class="lc-desc">Cadeiras em fileiras, sem mesas — maximiza capacidade para palestras.</div>
+      </div>
+      <div class="layout-card">
+        <div class="lc-num">100</div><div class="lc-pax">pessoas</div>
+        <div class="lc-name">Coquetel</div>
+        <div class="lc-desc">Layout em pé com mesas altas — perfeito para networking e eventos sociais.</div>
+      </div>
+      <div class="layout-card">
+        <div class="lc-num">28</div><div class="lc-pax">pessoas</div>
+        <div class="lc-name">Formato U</div>
+        <div class="lc-desc">Mesas em U — proporciona discussão em grupo e visibilidade total.</div>
+      </div>
+      <div class="layout-card">
+        <div class="lc-num">45</div><div class="lc-pax">pessoas</div>
+        <div class="lc-name">Meia Lua</div>
+        <div class="lc-desc">Semicírculo de mesas com boa visibilidade da apresentação.</div>
+      </div>
+      <div class="layout-card">
+        <div class="lc-num">48</div><div class="lc-pax">pessoas</div>
+        <div class="lc-name">Estações de 8p</div>
+        <div class="lc-desc">Mesas redondas para 8 pessoas — dinâmicas colaborativas e refeições.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- GALERIA -->
+<div style="background:var(--cream)">
+  <div class="container section reveal">
+    <p class="eyebrow">Galeria de Fotos</p>
+    <h2 class="heading">A sala em cada configuração</h2>
+    <div class="rule"></div>
+    <div class="gallery" id="gallery">
+      <div class="gallery-item wide" onclick="openLB(0)"><img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/sala-pf-escolar.jpg-O1I0AuHtc4o9Feb1tKKqP63lOLPkrb.webp" alt="Formato Escolar"></div>
+      <div class="gallery-item" onclick="openLB(1)"><img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1000658039-8oqHdOjMCQZKqeAbnkaveOwwVCLf9h.jpg" alt="Jardim Pau-Ferro"></div>
+      <div class="gallery-item" onclick="openLB(2)"><img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-02-12%20at%2010.29.20-hYLbYVatqlDfjzEj4oHLwxhcsDKETG.jpeg" alt="Pérgola Verde"></div>
+      <div class="gallery-item" onclick="openLB(3)"><img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1000658037%20%281%29-BG8Pbjm0XgpeM0K2HLi8tjnNGlkq6u.jpg" alt="Área coberta"></div>
+      <div class="gallery-item wide" onclick="openLB(4)"><img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1000324589_9a3f9e8b56a96f8849c42acdd0b24f1a-28_03_2025%2C%2008_48_12-J5TnnLnQr00vrlYOjCMHtQTpUwyeMp.jpg" alt="Vista do jardim"></div>
+      <div class="gallery-item wide" onclick="openLB(5)"><img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/C%C3%B3pia%20de%20Design%20sem%20nome_20250328_160842_0000-6MwORkKJafpXlrOrothzuaEU0ViSQ7.png" alt="Flores Azuis"></div>
+    </div>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" onclick="closeLB()">×</button>
+  <button class="lb-arrow lb-prev" onclick="moveLB(-1)">&#8249;</button>
+  <img id="lb-img" src="" alt="">
+  <button class="lb-arrow lb-next" onclick="moveLB(1)">&#8250;</button>
+</div>
+
+<!-- AMENIDADES -->
+<div class="amenidades reveal">
+  <div style="max-width:1100px;margin:0 auto">
+    <p class="eyebrow" style="color:var(--sand)">Inclusos</p>
+    <h2>O que está incluso</h2>
+    <div class="rule"></div>
+    <div class="amen-grid">
+      <div class="amen-item">
+        <div class="amen-icon">📽</div>
+        <div class="amen-name">Projetor + Tela 100"</div>
+        <div class="amen-desc">Projeção de alta resolução com tela retrátil de 100".</div>
+      </div>
+      <div class="amen-item">
+        <div class="amen-icon">🔊</div>
+        <div class="amen-name">Sistema de Som</div>
+        <div class="amen-desc">Caixas de som, microfone sem fio e lapela inclusos.</div>
+      </div>
+      <div class="amen-item">
+        <div class="amen-icon">❄️</div>
+        <div class="amen-name">Ar-Condicionado</div>
+        <div class="amen-desc">Climatização central com controle independente.</div>
+      </div>
+      <div class="amen-item">
+        <div class="amen-icon">📶</div>
+        <div class="amen-name">Wi-Fi Dedicado</div>
+        <div class="amen-desc">Internet rápida com acesso exclusivo para eventos.</div>
+      </div>
+      <div class="amen-item">
+        <div class="amen-icon">🪑</div>
+        <div class="amen-name">Mobiliário Modular</div>
+        <div class="amen-desc">Mesas e cadeiras reconfiguráveis em qualquer formato.</div>
+      </div>
+      <div class="amen-item">
+        <div class="amen-icon">🅿️</div>
+        <div class="amen-name">Estacionamento</div>
+        <div class="amen-desc">Vaga coberta para veículos dos participantes.</div>
+      </div>
+      <div class="amen-item">
+        <div class="amen-icon">♿</div>
+        <div class="amen-name">Acessibilidade</div>
+        <div class="amen-desc">Banheiros adaptados e acesso sem degraus.</div>
+      </div>
+      <div class="amen-item">
+        <div class="amen-icon">🌿</div>
+        <div class="amen-name">Jardim Integrado</div>
+        <div class="amen-desc">Acesso direto ao Jardim Pau-Ferro para coffee breaks ao ar livre.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-section reveal">
+  <p class="eyebrow">Próximo passo</p>
+  <h2 class="heading">Pronto para reservar?</h2>
+  <p>Envie sua solicitação e receberá uma proposta personalizada com todos os detalhes do seu evento na Sala Pau-Ferro.</p>
+  <div class="cta-buttons">
+    <a href="index.html#formulario" class="btn-primary">Solicitar Orçamento</a>
+    <a href="sala-pitangueiras.html" class="btn-secondary">Ver Sala Pitangueiras</a>
+  </div>
+</div>
+
+<footer style="background:#1a2e1e;padding:28px 80px;display:flex;align-items:center;justify-content:space-between">
+  <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/branco-25dUvbFxs6PmBzwlcg4NyJjiWlgp0J.png" alt="Nah Granja" style="height:26px;opacity:.45">
+  <span style="font-size:10.5px;color:rgba(255,255,255,.28)">© 2025 Nah Granja</span>
+  <a href="https://instagram.com/nahgranja" target="_blank" style="color:rgba(255,255,255,.35);text-decoration:none;font-size:11px;transition:color .2s">Instagram</a>
+</footer>
+
+<script>
+  const lbImgs = [
+    'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/sala-pf-escolar.jpg-O1I0AuHtc4o9Feb1tKKqP63lOLPkrb.webp',
+    'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1000658039-8oqHdOjMCQZKqeAbnkaveOwwVCLf9h.jpg',
+    'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-02-12%20at%2010.29.20-hYLbYVatqlDfjzEj4oHLwxhcsDKETG.jpeg',
+    'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1000658037%20%281%29-BG8Pbjm0XgpeM0K2HLi8tjnNGlkq6u.jpg',
+    'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1000324589_9a3f9e8b56a96f8849c42acdd0b24f1a-28_03_2025%2C%2008_48_12-J5TnnLnQr00vrlYOjCMHtQTpUwyeMp.jpg',
+    'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/C%C3%B3pia%20de%20Design%20sem%20nome_20250328_160842_0000-6MwORkKJafpXlrOrothzuaEU0ViSQ7.png'
+  ];
+  let cur = 0;
+  function openLB(i){ cur=i; document.getElementById('lb-img').src=lbImgs[i]; document.getElementById('lightbox').classList.add('open'); }
+  function closeLB(){ document.getElementById('lightbox').classList.remove('open'); }
+  function moveLB(d){ cur=(cur+d+lbImgs.length)%lbImgs.length; document.getElementById('lb-img').src=lbImgs[cur]; }
+  document.getElementById('lightbox').addEventListener('click',function(e){ if(e.target===this) closeLB(); });
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeLB(); if(e.key==='ArrowLeft') moveLB(-1); if(e.key==='ArrowRight') moveLB(1); });
+
+  // Reveal
+  const els = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.1});
+  els.forEach(el=>io.observe(el));
+
+  // Mobile menu
+  function toggleMobileMenu(){ document.getElementById('hamburger').classList.toggle('open'); document.getElementById('mobileMenu').classList.toggle('open'); }
+  function closeMobileMenu(){ document.getElementById('hamburger').classList.remove('open'); document.getElementById('mobileMenu').classList.remove('open'); }
+</script>
+</body>
+</html>
