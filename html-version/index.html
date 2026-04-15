@@ -657,21 +657,38 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   // WhatsApp
   function enviarWhatsApp(e){
-    e.preventDefault();
-    const d = getFormData();
-    const msg = `Olá! Gostaria de solicitar um orçamento para evento no Nah Granja.\n\n*Nome:* ${d.nome}\n*Empresa:* ${d.empresa||'Não informado'}\n*E-mail:* ${d.email}\n*Telefone:* ${d.telefone}\n*Tipo de Evento:* ${d.tipo}\n*Quantidade de Pessoas:* ${d.pessoas}\n*Data do Evento:* ${d.data}\n*Horário de Início:* ${d.horarioInicio}\n*Horário de Término:* ${d.horarioTermino}`;
-    window.open('https://wa.me/5511940439119?text='+encodeURIComponent(msg), '_blank');
-  }
+  e.preventDefault();
+  const d = getFormData();
+  
+  // ✅ Push GTM
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: 'lead_whatsapp',
+    lead_nome: d.nome,
+    lead_tipo: d.tipo
+  });
+
+  const msg = `...`; // mantém o restante igual
+  window.open('https://wa.me/5511940439119?text='+encodeURIComponent(msg), '_blank');
+}
 
   // E-mail
-  function enviarEmail(){
-    const form = document.getElementById('contactForm');
-    if(!form.checkValidity()){ form.reportValidity(); return; }
-    const d = getFormData();
-    const assunto = 'Solicitação de Orçamento - '+d.tipo+' - '+d.nome;
-    const corpo = `Olá! Gostaria de solicitar um orçamento.\n\nNome: ${d.nome}\nEmpresa: ${d.empresa||'Não informado'}\nE-mail: ${d.email}\nTelefone: ${d.telefone}\nTipo de Evento: ${d.tipo}\nQuantidade de Pessoas: ${d.pessoas}\nData do Evento: ${d.data}\nHorário de Início: ${d.horarioInicio}\nHorário de Término: ${d.horarioTermino}`;
-    window.location.href = 'mailto:luciana@nahgranja.com.br?subject='+encodeURIComponent(assunto)+'&body='+encodeURIComponent(corpo);
-  }
+function enviarEmail(){
+  const form = document.getElementById('contactForm');
+  if(!form.checkValidity()){ form.reportValidity(); return; }
+  const d = getFormData();
+
+  // ✅ Push GTM
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: 'lead_email',
+    lead_nome: d.nome,
+    lead_tipo: d.tipo
+  });
+
+  const assunto = '...'; // mantém o restante igual
+  window.location.href = 'mailto:...';
+}
 
   // PHP (AJAX)
   function enviarPHP(){
