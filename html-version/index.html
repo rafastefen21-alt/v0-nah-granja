@@ -656,20 +656,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
 
   // WhatsApp
-function enviarWhatsApp(e){
-  e.preventDefault();
-  const d = getFormData();
-  
-  // ✅ Push GTM
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    event: 'lead_whatsapp',
-    lead_nome: d.nome,
-    lead_tipo: d.tipo
-  });
-
-  const msg = `...`; // mantém o restante igual
-  window.open('https://wa.me/5511940439119?text='+encodeURIComponent(msg), '_blank');
+  function enviarWhatsApp(e){
+    e.preventDefault();
+    const d = getFormData();
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 'lead_whatsapp', lead_nome: d.nome, lead_tipo: d.tipo });
+    const msg = `Olá! Gostaria de solicitar um orçamento.\n\nNome: ${d.nome}\nEmpresa: ${d.empresa||'Não informado'}\nE-mail: ${d.email}\nTelefone: ${d.telefone}\nTipo de Evento: ${d.tipo}\nQuantidade de Pessoas: ${d.pessoas}\nData do Evento: ${d.data}\nHorário de Início: ${d.horarioInicio}\nHorário de Término: ${d.horarioTermino}`;
+    window.open('https://wa.me/5511940439119?text='+encodeURIComponent(msg), '_blank');
+  }
 
   // E-mail
   function enviarEmail(){
@@ -706,7 +700,7 @@ function enviarWhatsApp(e){
       });
   }
 
-  // Reveal
+  // Reveal (scroll animations)
   const els = document.querySelectorAll('.reveal');
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
